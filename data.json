@@ -10,35 +10,35 @@
       "title": "Recipe Sharing App",
       "description": "A social network for sharing and discovering recipes",
       "technologiesUsed": ["Angular", "Firebase", "Bootstrap"],
-      "image": "https://picsum.photos/400/300",
+      "image": "https://picsum.photos/400/400",
       "projectLink": "https://example.com/recipes"
    },
    {
       "title": "Fitness Tracker",
       "description": "A web application for tracking workouts and progress",
       "technologiesUsed": ["Vue.js", "Django", "PostgreSQL"],
-      "image": "https://picsum.photos/400/300",
+      "image": "https://picsum.photos/500/300",
       "projectLink": "https://example.com/fitness"
    },
    {
       "title": "Online Learning Platform",
       "description": "A platform for online courses and education",
       "technologiesUsed": ["React", "Node.js", "MySQL"],
-      "image": "https://picsum.photos/400/300",
+      "image": "https://picsum.photos/400",
       "projectLink": "https://example.com/education"
    },
    {
       "title": "Social Media App",
       "description": "A social media platform for sharing photos and connecting with friends",
       "technologiesUsed": ["React Native", "Firebase", "Expo"],
-      "image": "https://picsum.photos/400/300",
+      "image": "https://picsum.photos/600",
       "projectLink": "https://example.com/social-media"
    },
    {
       "title": "Stock Trading App",
       "description": "A mobile app for buying and selling stocks",
       "technologiesUsed": ["React Native", "Node.js", "MongoDB"],
-      "image": "https://picsum.photos/400/300",
+      "image": "https://picsum.photos/700",
       "projectLink": "https://example.com/stocks"
    }
 ]

@@ -6,6 +6,7 @@ import {
    AiFillDribbbleCircle,
    AiOutlineTwitter
 } from "react-icons/ai"
+import data from "../../data.json"
 
 export default function Home() {
    return (
@@ -19,9 +20,9 @@ export default function Home() {
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-         <div className="w-screen h-screen inset-0 flex flex-col fixed bg-white">
+         <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto pb-10 fixed bg-white">
             <MainNav />
-            <main className="w-full max-w-4xl mx-auto">
+            <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                <section className="w-full grid grid-cols-3 gap-6">
                   <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
                      <div className="flex flex-col flex-1">
@@ -66,6 +67,17 @@ export default function Home() {
                      src="images/profile.jpg"
                      alt="profile image"
                   />
+               </section>
+               <section className="grid grid-cols-2 gap-6">
+                  {data.map((item, i)=> (
+                     <div
+                        className="relative overflow-hidden aspect-square rounded-2xl"
+                        key={i}
+                     >
+                        <img className="absolute inset-0 w-full h-full object-cover" src={item.image} alt="" />
+                        {item.title}
+                     </div>
+                  ))}
                </section>
             </main>
          </div>
