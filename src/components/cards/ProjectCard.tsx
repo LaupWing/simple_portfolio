@@ -1,6 +1,6 @@
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs"
 import { motion } from "framer-motion"
 import { FC } from "react"
+import { IconArrow } from "~/components/elements"
 
 interface ProjectCardProps {
    title: string
@@ -28,7 +28,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                <h2 className="text-neutral-100 text-xl">{title}</h2>
                <p className="text-neutral-300 text-sm">{description}</p>
             </div>
-            <BsFillArrowUpRightCircleFill
+            <IconArrow
                className="text-neutral-100 shrink-0"
                size={34}
             />
