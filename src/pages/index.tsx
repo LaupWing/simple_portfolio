@@ -13,9 +13,26 @@ export default function Home() {
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-         <main className="w-screen h-screen inset-0 fixed bg-white">
+         <div className="w-screen h-screen inset-0 flex flex-col fixed bg-white">
             <MainNav/>
-         </main>
+            <main className="w-full max-w-4xl mx-auto">
+               <section className="w-full grid grid-cols-3 gap-6">
+                  <div className="relative flex-shrink-0 flex-1 rounded-md col-span-2 overflow-hidden">
+                     <img 
+                        className="absolute inset-0 object-cover" 
+                        src="images/profile.jpg" 
+                        alt="profile image" 
+                     />
+                     <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl"/>
+                  </div>
+                  <img 
+                     className="col-span-1 object-cover aspect-[4/6] rounded-md" 
+                     src="images/profile.jpg" 
+                     alt="profile image" 
+                  />
+               </section>
+            </main>
+         </div>
       </>
    )
 }

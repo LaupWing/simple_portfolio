@@ -52,7 +52,7 @@ const NavLink:FC<NavLinkProps> = ({
    return (
       <Link 
          href={href}
-         className={`tracking-tight ${isActive ? "font-bold" : "font-semibold text-neutral-400"}`}
+         className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
       >
          {text}
       </Link>
