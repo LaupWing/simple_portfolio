@@ -8,7 +8,7 @@ interface ProjectCardProps {
    image: string
 }
 
-const ProjectCard:FC<ProjectCardProps> = ({
+export const ProjectCard:FC<ProjectCardProps> = ({
    title,
    description,
    image
@@ -41,4 +41,3 @@ const ProjectCard:FC<ProjectCardProps> = ({
       </article>
    )
 }
-export default ProjectCard
