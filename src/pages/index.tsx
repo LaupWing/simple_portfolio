@@ -17,10 +17,13 @@ export default function Home() {
             <MainNav/>
             <main className="w-full max-w-4xl mx-auto">
                <section className="w-full grid grid-cols-3 gap-6">
-                  <div className="relative flex-shrink-0 flex-1 rounded-2xl col-span-2 overflow-hidden p-10">
-                     <div className="flex flex-col">
+                  <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
+                     <div className="flex flex-col flex-1">
                         <h1 className="text-3xl leading-normal">Hello, I’m Abo, a product Designer With 7 years of experience.</h1>
                         <p className="mt-10">I care a lot about using design for positive impact. and enjoy creating user-centric, delightful, and human experiences.</p>
+                        <div className="mt-auto flex">
+                           <button className="py-2 px-6 rounded-full bg-neutral-900 text-white">Contact me</button>
+                        </div>
                      </div>
                      <img 
                         className="absolute inset-0 object-cover -z-10" 
