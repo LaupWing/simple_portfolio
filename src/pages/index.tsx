@@ -6,6 +6,7 @@ import {
    AiFillDribbbleCircle,
    AiOutlineTwitter
 } from "react-icons/ai"
+import { BsFillArrowUpRightCircleFill } from "react-icons/bs"
 import data from "../../data.json"
 
 export default function Home() {
@@ -71,11 +72,18 @@ export default function Home() {
                <section className="grid grid-cols-2 gap-6">
                   {data.map((item, i)=> (
                      <div
-                        className="relative overflow-hidden aspect-square rounded-2xl"
+                        className="relative overflow-hidden justify-between flex aspect-square rounded-2xl p-6"
                         key={i}
                      >
-                        <img className="absolute inset-0 w-full h-full object-cover" src={item.image} alt="" />
-                        {item.title}
+                        <div className="flex flex-col">
+                           <h2 className="text-neutral-100 text-xl">{item.title}</h2>
+                           <p className="text-neutral-300 text-sm">{item.description}</p>
+                        </div>
+                        <img className="absolute inset-0 w-full h-full object-cover -z-10" src={item.image} alt="" />
+                        <BsFillArrowUpRightCircleFill 
+                           className="text-neutral-100 shrink-0" 
+                           size={34}
+                        />
                      </div>
                   ))}
                </section>
