@@ -1,0 +1,23 @@
+[
+   {
+      "title": "E-Commerce Website",
+      "description": "An online marketplace for buying and selling products",
+      "technologiesUsed": ["React", "Node.js", "MongoDB"],
+      "image": "https://picsum.photos/400/300",
+      "projectLink": "https://example.com/ecommerce"
+   },
+   {
+      "title": "Recipe Sharing App",
+      "description": "A social network for sharing and discovering recipes",
+      "technologiesUsed": ["Angular", "Firebase", "Bootstrap"],
+      "image": "https://picsum.photos/400/300",
+      "projectLink": "https://example.com/recipes"
+   },
+   {
+      "title": "Fitness Tracker",
+      "description": "A web application for tracking workouts and progress",
+      "technologiesUsed": ["Vue.js", "Django", "PostgreSQL"],
+      "image": "https://picsum.photos/400/300",
+      "projectLink": "https://example.com/fitness"
+   }
+]

@@ -22,8 +22,13 @@ export const MainNav = () => {
       },
    ]
    return (
-      <header className="w-full text-sm flex py-4 items-center justify-between mx-auto max-w-4xl">
-         <div>Logo</div>
+      <header className="w-full text-sm flex py-6 items-center justify-between mx-auto max-w-4xl">
+         <div className="flex items-center space-x-1">
+            <div className="w-5 h-5 bg-indigo-500 rounded-full">
+
+            </div>
+            <h1 className="uppercase font-bold">Logo</h1>
+         </div>
          <nav className="space-x-10 text-neutral-800">
             {links.map((link, i) => (
                <NavLink
