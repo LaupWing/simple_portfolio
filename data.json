@@ -24,7 +24,7 @@
       "title": "Online Learning Platform",
       "description": "A platform for online courses and education",
       "technologiesUsed": ["React", "Node.js", "MySQL"],
-      "image": "https://picsum.photos/400",
+      "image": "https://picsum.photos/700",
       "projectLink": "https://example.com/education"
    },
    {
@@ -38,7 +38,7 @@
       "title": "Stock Trading App",
       "description": "A mobile app for buying and selling stocks",
       "technologiesUsed": ["React Native", "Node.js", "MongoDB"],
-      "image": "https://picsum.photos/700",
+      "image": "https://picsum.photos/700/500",
       "projectLink": "https://example.com/stocks"
    }
 ]
