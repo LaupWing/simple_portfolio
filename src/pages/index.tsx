@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { MainNav } from "~/components/global"
 
 export default function Home() {
    return (
@@ -12,7 +13,8 @@ export default function Home() {
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-         <main>
+         <main className="w-screen h-screen inset-0 fixed bg-white">
+            <MainNav/>
          </main>
       </>
    )
