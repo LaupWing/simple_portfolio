@@ -30,11 +30,15 @@ export default function Home() {
                         alt="github" 
                      />
                      <div className="inset-0 absolute bg-white/40 backdrop-blur-sm -z-10"/>
-                     <Carousel className="flex-1 h-full flex" showThumbs={false}>
-                        <div className="flex-1 w-full h-full">Test</div>
-                        <div className="flex-1 w-full h-full">Test</div>
-                        <div className="flex-1 w-full h-full">Test</div>
-                        <div className="flex-1 w-full h-full">Test</div>
+                     <Carousel 
+                        className="flex-1 h-full flex" 
+                        showThumbs={false}
+                        showStatus={false}
+                     >
+                        <div className="flex-1">Test</div>
+                        <div className="flex-1">Test</div>
+                        <div className="flex-1">Test</div>
+                        <div className="flex-1">Test</div>
                      </Carousel>
                   </div>
                   {data.map((item, i)=> (
