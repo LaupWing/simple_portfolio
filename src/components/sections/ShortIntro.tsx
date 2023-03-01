@@ -1,3 +1,4 @@
+import { FC } from "react"
 import { 
    IconDribbble, 
    IconInstagram, 
@@ -5,7 +6,7 @@ import {
    IconTwitter 
 } from "~/components/elements"
 
-const ShortIntro = () => {
+export const ShortIntro:FC = () => {
    return (
       <section className="w-full grid grid-cols-3 gap-6">
          <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
@@ -54,4 +55,3 @@ const ShortIntro = () => {
       </section>
    )
 }
-export default ShortIntro
