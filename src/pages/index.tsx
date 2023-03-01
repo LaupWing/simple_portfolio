@@ -21,6 +21,13 @@ export default function Home() {
             <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                <ShortIntro />
                <section className="grid grid-cols-2 gap-6">
+                  <div className="col-span-2 h-40 relative overflow-hidden rounded-2xl">
+                     <img 
+                        className="absolute inset-0 object-cover" 
+                        src="https://images.pexels.com/photos/249798/pexels-photo-249798.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                        alt="github" 
+                     />
+                  </div>
                   {data.map((item, i)=> (
                      <ProjectCard 
                         description={item.description}
