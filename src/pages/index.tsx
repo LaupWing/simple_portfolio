@@ -35,7 +35,7 @@ export default function Home() {
                         showThumbs={false}
                         showStatus={false}
                      >
-                        <div className="flex-1">Test</div>
+                        <div className="flex-1 my-auto">Test</div>
                         <div className="flex-1">Test</div>
                         <div className="flex-1">Test</div>
                         <div className="flex-1">Test</div>
