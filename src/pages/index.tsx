@@ -23,10 +23,11 @@ export default function Home() {
                <section className="grid grid-cols-2 gap-6">
                   <div className="col-span-2 h-40 relative overflow-hidden rounded-2xl">
                      <img 
-                        className="absolute inset-0 object-cover" 
+                        className="absolute inset-0 object-cover -z-10" 
                         src="https://images.pexels.com/photos/249798/pexels-photo-249798.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                         alt="github" 
                      />
+                     <div className="inset-0 absolute bg-white/40 backdrop-blur-sm -z-10"/>
                   </div>
                   {data.map((item, i)=> (
                      <ProjectCard 
