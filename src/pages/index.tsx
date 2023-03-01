@@ -1,15 +1,8 @@
 import Head from "next/head"
 import { MainNav } from "~/components/global"
-import {
-   AiFillInstagram,
-   AiFillLinkedin,
-   AiFillDribbbleCircle,
-   AiOutlineTwitter
-} from "react-icons/ai"
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs"
 import data from "../../data.json"
-import { motion } from "framer-motion"
 import { ShortIntro } from "~/components/sections"
+import { ProjectCard } from "~/components/cards"
 
 export default function Home() {
    return (
@@ -29,28 +22,12 @@ export default function Home() {
                <ShortIntro />
                <section className="grid grid-cols-2 gap-6">
                   {data.map((item, i)=> (
-                     <article
-                        className="relative overflow-hidden justify-between flex aspect-square rounded-2xl cursor-pointer"
+                     <ProjectCard 
+                        description={item.description}
+                        image={item.image}
+                        title={item.title}
                         key={i}
-                     >
-                        <motion.div 
-                           className="flex p-6 flex-1"
-                           whileHover={{
-                              scale: 1.05,
-                              transition: { duration: 0.5 },
-                            }}
-                        >
-                           <div className="flex flex-col flex-1">
-                              <h2 className="text-neutral-100 text-xl">{item.title}</h2>
-                              <p className="text-neutral-300 text-sm">{item.description}</p>
-                           </div>
-                           <BsFillArrowUpRightCircleFill 
-                              className="text-neutral-100 shrink-0" 
-                              size={34}
-                           />
-                           <img className="absolute inset-0 w-full h-full object-cover -z-10" src={item.image} alt="" />
-                        </motion.div>
-                     </article>
+                     />
                   ))}
                </section>
             </main>
