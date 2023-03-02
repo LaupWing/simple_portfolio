@@ -6,3 +6,12 @@
 .carousel-slider{
    display: flex;
 }
+
+.slider-wrapper {
+   height: 100%;
+   display: flex;
+}
+
+.slide{
+   display: flex;
+}
