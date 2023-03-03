@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { Carousel } from "react-responsive-carousel"
+import { Slide1Github } from "./Slide1Github"
 
 export const SlideShow:FC = () => {
    return (
@@ -15,7 +16,7 @@ export const SlideShow:FC = () => {
             showThumbs={false}
             showStatus={false}
          >
-            <div className="flex-1 bg-indigo-400 m-2">Test</div>
+            <Slide1Github />
             <div className="flex-1">Test</div>
             <div className="flex-1">Test</div>
             <div className="flex-1">Test</div>

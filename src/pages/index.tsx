@@ -2,7 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Head from "next/head"
 import { MainNav } from "~/components/global"
 import data from "../../data.json"
-import { ShortIntro } from "~/components/sections"
+import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { Carousel } from "react-responsive-carousel"
 
@@ -23,24 +23,7 @@ export default function Home() {
             <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                <ShortIntro />
                <section className="grid grid-cols-2 gap-6">
-                  <div className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex">
-                     <img 
-                        className="absolute inset-0 object-cover -z-10" 
-                        src="https://images.pexels.com/photos/249798/pexels-photo-249798.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                        alt="github" 
-                     />
-                     <div className="inset-0 absolute bg-white/50 backdrop-blur-sm -z-10"/>
-                     <Carousel 
-                        className="flex-1 h-full flex" 
-                        showThumbs={false}
-                        showStatus={false}
-                     >
-                        <div className="flex-1 bg-indigo-400 m-2">Test</div>
-                        <div className="flex-1">Test</div>
-                        <div className="flex-1">Test</div>
-                        <div className="flex-1">Test</div>
-                     </Carousel>
-                  </div>
+                  <SlideShow />
                   {data.map((item, i)=> (
                      <ProjectCard 
                         description={item.description}

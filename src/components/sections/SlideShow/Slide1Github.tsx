@@ -1,3 +1,5 @@
 export const Slide1Github = () => {
-   return <div>Slide1Github</div>
+   return (
+      <div className="flex-1 bg-indigo-400 m-2">Github</div>
+   )
 }
