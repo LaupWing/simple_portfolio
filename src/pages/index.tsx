@@ -4,9 +4,10 @@ import { MainNav } from "~/components/global"
 import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
-import { Carousel } from "react-responsive-carousel"
+import { GetServerSideProps, NextPage } from "next"
 
-export default function Home() {
+const Home:NextPage = (props) => {
+   console.log(props)
    return (
       <>
          <Head>
@@ -37,4 +38,13 @@ export default function Home() {
          </div>
       </>
    )
+}
+export default Home
+
+export const getServerSideProps:GetServerSideProps = async () => {
+   return {
+      props: {
+         test: ""
+      }
+   }
 }
