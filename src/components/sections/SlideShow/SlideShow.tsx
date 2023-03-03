@@ -1,6 +1,7 @@
+import { FC } from "react"
 import { Carousel } from "react-responsive-carousel"
 
-export const SlideShow = () => {
+export const SlideShow:FC = () => {
    return (
       <div className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex">
          <img 
