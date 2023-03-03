@@ -5,9 +5,10 @@ import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
+import config from "config"
 
 const Home:NextPage = (props) => {
-   console.log(props)
+   console.log(props.data)
    return (
       <>
          <Head>
@@ -42,9 +43,12 @@ const Home:NextPage = (props) => {
 export default Home
 
 export const getServerSideProps:GetServerSideProps = async () => {
+   const res = await fetch(config.github_endpoint + "laupwing/repos?sort=created&per_page=100")
+   const data = await res.json()
+   
    return {
       props: {
-         test: ""
+         data: data.map(x => x.name)
       }
    }
 }
