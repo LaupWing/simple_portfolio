@@ -6,9 +6,20 @@ import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
 import config from "config"
+import { useEffect } from "react"
 
 const Home:NextPage = (props) => {
-   console.log(props.data)
+   useEffect(() => {
+      const init = async () => {
+         const test = await Promise.all(props.data.map(async x => {
+            const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
+            const data = await res.json()
+            return data
+         }))
+         console.log(test)
+      }
+      init()
+   },[])
    return (
       <>
          <Head>
@@ -45,6 +56,7 @@ export default Home
 export const getServerSideProps:GetServerSideProps = async () => {
    const res = await fetch(config.github_endpoint + "laupwing/repos?sort=created&per_page=100")
    const data = await res.json()
+   console.log(data)
    
    return {
       props: {
