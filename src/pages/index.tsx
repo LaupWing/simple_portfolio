@@ -9,17 +9,17 @@ import config from "config"
 import { useEffect } from "react"
 
 const Home:NextPage = (props) => {
-   useEffect(() => {
-      const init = async () => {
-         const test = await Promise.all(props.data.map(async x => {
-            const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
-            const data = await res.json()
-            return data
-         }))
-         console.log(test)
-      }
-      init()
-   },[])
+   // useEffect(() => {
+   //    const init = async () => {
+   //       const test = await Promise.all(props.data.map(async x => {
+   //          const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
+   //          const data = await res.json()
+   //          return data
+   //       }))
+   //       console.log(test)
+   //    }
+   //    init()
+   // },[])
    return (
       <>
          <Head>
@@ -53,14 +53,14 @@ const Home:NextPage = (props) => {
 }
 export default Home
 
-export const getServerSideProps:GetServerSideProps = async () => {
-   const res = await fetch(config.github_endpoint + "laupwing/repos?sort=created&per_page=100")
-   const data = await res.json()
-   console.log(data)
+// export const getServerSideProps:GetServerSideProps = async () => {
+//    const res = await fetch(config.github_endpoint + "laupwing/repos?sort=created&per_page=100")
+//    const data = await res.json()
+//    console.log(data)
    
-   return {
-      props: {
-         data: data.map(x => x.name)
-      }
-   }
-}
+//    return {
+//       props: {
+//          data: data.map(x => x.name)
+//       }
+//    }
+// }
