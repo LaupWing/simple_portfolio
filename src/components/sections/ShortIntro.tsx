@@ -12,7 +12,7 @@ export const ShortIntro:FC = () => {
          <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
             <div className="flex flex-col flex-1">
                <h1 className="text-3xl leading-normal">
-                  Hello, I’m Abo, a product Designer With 7 years of
+                  Hello, I’m Loc, a product Designer With 7 years of
                   experience.
                </h1>
                <p className="mt-10">
