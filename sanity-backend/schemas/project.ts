@@ -11,6 +11,17 @@ export default defineType({
          type: "string"
       }),
       defineField({
+         name: "description",
+         title: "Description",
+         type: "text"
+      }),
+      defineField({
+         name: "github",
+         title: "Github",
+         type: "url",
+         description: "Url of github repository"
+      }),
+      defineField({
          name: "content",
          title: "content",
          type: "blockContent"
