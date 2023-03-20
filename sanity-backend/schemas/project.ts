@@ -25,8 +25,9 @@ export default defineType({
       }),
       defineField({
          name: "content",
-         title: "content",
-         type: "blockContent"
+         title: "Content",
+         type: "blockContent",
+         description: "Explaination in detail of the project"
       }),
       defineField({
          name: "createdAt",
