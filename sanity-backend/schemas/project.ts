@@ -8,14 +8,23 @@ export default defineType({
    icon,
    fields: [
       defineField({
-         name: "title",
-         title: "Title",
+         name: "name",
+         title: "Name",
          type: "string"
       }),
       defineField({
          name: "description",
          title: "Description",
          type: "text"
+      }),
+      defineField({
+         name: "slug",
+         title: "slug",
+         type: "slug",
+         options: {
+            source: "name",
+            maxLength: 200
+         }
       }),
       defineField({
          name: "github",
