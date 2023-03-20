@@ -9,17 +9,17 @@ import config from "config"
 import { useEffect } from "react"
 
 const Home:NextPage = (props) => {
-   // useEffect(() => {
-   //    const init = async () => {
-   //       const test = await Promise.all(props.data.map(async x => {
-   //          const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
-   //          const data = await res.json()
-   //          return data
-   //       }))
-   //       console.log(test)
-   //    }
-   //    init()
-   // },[])
+   useEffect(() => {
+      // const init = async () => {
+      //    const test = await Promise.all(props.data.map(async x => {
+      //       const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
+      //       const data = await res.json()
+      //       return data
+      //    }))
+      //    console.log(test)
+      // }
+      // init()
+   },[])
    return (
       <>
          <Head>
