@@ -5,11 +5,24 @@ import {
    IconLinkedIn, 
    IconTwitter 
 } from "~/components/elements"
+import { motion } from "framer-motion"
 
 export const ShortIntro:FC = () => {
    return (
-      <section className="w-full grid grid-cols-3 gap-6">
-         <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
+      <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
+         <motion.div 
+            className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10"
+            initial={{
+               scale: 0
+            }}
+            animate={{
+               x: 0,
+               transition: {
+                  delay: .9
+               },
+               scale: 1
+            }}
+         >
             <div className="flex flex-col flex-1">
                <h1 className="text-3xl leading-normal">
                   Hello, I’m Loc, a product Designer With 7 years of
@@ -46,11 +59,20 @@ export const ShortIntro:FC = () => {
                alt="profile image"
             />
             <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10" />
-         </div>
-         <img
+         </motion.div>
+         <motion.img
             className="col-span-1 object-cover aspect-[4/6] rounded-2xl"
             src="images/profile.jpg"
             alt="profile image"
+            initial={{
+               x: "110%"
+            }}
+            animate={{
+               x: 0,
+               transition: {
+                  delay: 1.2
+               },
+            }}
          />
       </section>
    )
