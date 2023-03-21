@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { FC } from "react"
-import { motion, Variants } from "framer-motion"
+import { motion } from "framer-motion"
  
 export const MainNav = () => {
    const links = [
@@ -22,25 +22,6 @@ export const MainNav = () => {
          text: "Contact"
       },
    ]
-   const list: Variants = {
-      visible: { 
-         opacity: 1,
-         y: 0,
-         transition: {
-            type: "spring",
-            stiffness: 300,
-            damping: 24,
-            duration: .5
-         } 
-      },
-      hidden: { 
-         opacity: 0,
-         y: -100,
-         transition:{
-            duration: 2
-         }
-      },
-    }
    return (
       <header className="w-full text-sm flex py-6 items-center justify-between mx-auto max-w-4xl">
          <motion.div 
