@@ -10,7 +10,7 @@ export const SlideShow:FC = () => {
             src="https://images.pexels.com/photos/249798/pexels-photo-249798.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
             alt="github" 
          />
-         <div className="inset-0 absolute bg-white/50 backdrop-blur-sm -z-10"/>
+         <div className="inset-0 absolute bg-white/30 backdrop-blur-sm -z-10"/>
          <Carousel 
             className="flex-1 h-full flex" 
             showThumbs={false}
