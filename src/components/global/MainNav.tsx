@@ -25,15 +25,20 @@ export const MainNav = () => {
    const list: Variants = {
       visible: { 
          opacity: 1,
+         y: 0,
          transition: {
             type: "spring",
             stiffness: 300,
             damping: 24,
-            duration: 3000
+            duration: .5
          } 
       },
       hidden: { 
-         opacity: 0 
+         opacity: 0,
+         y: -100,
+         transition:{
+            duration: 2
+         }
       },
     }
    return (
