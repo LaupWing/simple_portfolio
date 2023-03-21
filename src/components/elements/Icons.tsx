@@ -5,7 +5,10 @@ import {
    AiFillDribbbleCircle,
    AiOutlineTwitter
 } from "react-icons/ai"
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs"
+import { BsFillArrowUpRightCircleFill, BsWordpress } from "react-icons/bs"
+import { GrGatsbyjs } from "react-icons/gr"
+import { IoLogoLaravel, IoLogoReact, IoLogoVue } from "react-icons/io5"
+import { SiFirebase, SiShopify, SiTypescript } from "react-icons/si"
 
 
 export const IconInstagram:IconType = (props) => {
@@ -27,3 +30,35 @@ export const IconTwitter:IconType = (props) => {
 export const IconArrow:IconType = (props) => {
    return <BsFillArrowUpRightCircleFill {...props}/>
 } 
+
+export const IconFirebase:IconType = (props) => {
+   return <SiFirebase {...props}/>
+} 
+
+export const IconWordpress:IconType = (props) => {
+   return <BsWordpress {...props}/>
+} 
+
+export const IconReact:IconType = (props) => {
+   return <IoLogoReact {...props}/>
+} 
+
+export const IconVue:IconType = (props) => {
+   return <IoLogoVue {...props}/>
+} 
+
+export const IconTypescript:IconType = (props) => {
+   return <SiTypescript {...props}/>
+} 
+
+export const IconLaravel:IconType = (props) => {
+   return <IoLogoLaravel {...props}/>
+} 
+
+export const IconShopify:IconType = (props) => {
+   return <SiShopify {...props}/>
+} 
+
+export const IconGatsby:IconType = (props) => {
+   return <GrGatsbyjs {...props}/>
+}
