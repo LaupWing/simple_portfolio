@@ -41,14 +41,21 @@ export const MainNav = () => {
             <div className="w-5 h-5 bg-indigo-500 rounded-full" />
             <h1 className="uppercase font-bold">Logo</h1>
          </motion.div>
-         <nav className="space-x-10 text-neutral-800">
-            {links.map((link, i) => (
-               <NavLink
-                  key={i}
-                  href={link.href}
-                  text={link.text}
-               />
-            ))}
+         <nav className="text-neutral-800">
+            <motion.ul
+               className="space-x-10"
+               transition={{
+                  staggerChildren: 0.2
+               }}
+            >
+               {links.map((link, i) => (
+                  <NavLink
+                     key={i}
+                     href={link.href}
+                     text={link.text}
+                  />
+               ))}
+            </motion.ul>
          </nav>
       </header>
    )
