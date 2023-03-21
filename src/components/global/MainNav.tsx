@@ -22,6 +22,19 @@ export const MainNav = () => {
          text: "Contact"
       },
    ]
+   const container = {
+      hidden: { 
+         opacity: 0
+      },
+      show: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3,
+         },
+      },
+   }
+
    return (
       <header className="w-full text-sm flex py-6 items-center justify-between mx-auto max-w-4xl">
          <motion.div 
@@ -30,7 +43,7 @@ export const MainNav = () => {
                x: 0,
                opacity: 1,
                transition: {
-                  duration: 1
+                  duration: 0.3
                }
             }}
             initial={{
@@ -44,12 +57,9 @@ export const MainNav = () => {
          <nav className="text-neutral-800">
             <motion.ul
                className="space-x-10 flex"
-               animate={{
-                  transition:{
-                     staggerChildren: 0.2,
-                     delayChildren: 1
-                  }
-               }}
+               variants={container}
+               animate="show"
+               initial="hidden"
             >
                {links.map((link, i) => (
                   <NavLink
@@ -75,15 +85,14 @@ const NavLink:FC<NavLinkProps> = ({
 }) => {
    const router = useRouter()
    const isActive = router.pathname === href
+   const item = {
+      hidden: { scale: 0, y: 100 },
+      show: { scale: 1, y: 0 },
+  }
 
    return (
       <motion.li
-         initial={{
-            scale: 0, y: 100
-         }}
-         animate={{
-            scale: 1, y: 0
-         }}
+         variants={item}
       >
          <Link 
             href={href}
