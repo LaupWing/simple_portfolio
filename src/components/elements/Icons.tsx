@@ -1,13 +1,20 @@
-import { IconType } from "react-icons"
+import type { IconType } from "react-icons"
 import {
    AiFillInstagram,
    AiFillLinkedin,
    AiFillDribbbleCircle,
    AiOutlineTwitter
 } from "react-icons/ai"
-import { BsFillArrowUpRightCircleFill, BsWordpress } from "react-icons/bs"
+import { 
+   BsFillArrowUpRightCircleFill, 
+   BsWordpress 
+} from "react-icons/bs"
 import { GrGatsbyjs } from "react-icons/gr"
-import { IoLogoLaravel, IoLogoReact, IoLogoVue } from "react-icons/io5"
+import { 
+   IoLogoLaravel, 
+   IoLogoReact, 
+   IoLogoVue 
+} from "react-icons/io5"
 import { SiFirebase, SiShopify, SiTypescript } from "react-icons/si"
 
 
