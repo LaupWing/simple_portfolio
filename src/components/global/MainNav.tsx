@@ -43,9 +43,12 @@ export const MainNav = () => {
          </motion.div>
          <nav className="text-neutral-800">
             <motion.ul
-               className="space-x-10"
-               transition={{
-                  staggerChildren: 0.2
+               className="space-x-10 flex"
+               animate={{
+                  transition:{
+                     staggerChildren: 0.2,
+                     delayChildren: 1
+                  }
                }}
             >
                {links.map((link, i) => (
@@ -74,11 +77,20 @@ const NavLink:FC<NavLinkProps> = ({
    const isActive = router.pathname === href
 
    return (
-      <Link 
-         href={href}
-         className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
+      <motion.li
+         initial={{
+            scale: 0, y: 100
+         }}
+         animate={{
+            scale: 1, y: 0
+         }}
       >
-         {text}
-      </Link>
+         <Link 
+            href={href}
+            className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
+         >
+            {text}
+         </Link>
+      </motion.li>
    )
 }
