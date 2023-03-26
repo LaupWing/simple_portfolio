@@ -36,8 +36,8 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             }}
          >
             <div className="flex flex-col flex-1">
-               <h2 className="text-neutral-100 text-xl">{title}</h2>
-               <p className="text-neutral-300 text-sm">{description}</p>
+               <h2 className="text-neutral-100 text-lg">{title}</h2>
+               <p className="text-neutral-300 text-xs">{description}</p>
             </div>
             <IconArrow
                className="text-neutral-100 shrink-0"
