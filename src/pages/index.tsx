@@ -41,6 +41,7 @@ const Home:NextPage = (props) => {
                      <ProjectCard 
                         description={item.description}
                         title={item.title}
+                        index={i}
                         key={i}
                      />
                   ))}

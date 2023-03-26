@@ -6,24 +6,25 @@ import image from "~/images/placeholder.png"
 interface ProjectCardProps {
    title: string
    description: string
+   index: number
 }
 
 export const ProjectCard:FC<ProjectCardProps> = ({
    title,
-   description
+   description,
+   index
 }) => {
+   const isEven = index % 2 === 0
+
    return (
       <motion.article
          initial={{
             opacity: 0,
-            x: "100%"
+            x: isEven ? "-100%" : "100%"
          }}
          whileInView={{
             opacity: 1,
-            x: 0,
-            transition: {
-               duration: 0.5
-            }
+            x: 0
          }}
          className="relative overflow-hidden justify-between flex aspect-square rounded-2xl cursor-pointer"
       >
