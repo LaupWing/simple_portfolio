@@ -11,7 +11,7 @@ const Home:NextPage = () => {
    return (
       <Layout>
          <ShortIntro />
-         <section className="grid grid-cols-2 gap-6 overflow-hidden">
+         <section className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden">
             <SlideShow 
                animationEnded={() => {
                   setShowCards(true)
