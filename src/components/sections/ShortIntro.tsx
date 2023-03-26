@@ -3,8 +3,7 @@ import {
    IconDribbble, 
    IconGithub, 
    IconInstagram, 
-   IconLinkedIn, 
-   IconTwitter 
+   IconLinkedIn,
 } from "~/components/elements"
 import { motion } from "framer-motion"
 
@@ -76,5 +75,26 @@ export const ShortIntro:FC = () => {
             }}
          />
       </section>
+   )
+}
+
+
+interface SocialProps {
+   name: string
+   url: string
+}
+
+const Social = () => {
+   const socials = {
+      instagram: IconInstagram,
+      linkedIn: IconLinkedIn,
+      dribble: IconDribbble,
+      github: IconGithub
+   }
+
+   return (
+      <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
+         <IconInstagram size={24} />
+      </div>
    )
 }
