@@ -3,7 +3,13 @@ import { Carousel } from "react-responsive-carousel"
 import { Slide1Skills } from "./Slide1Skills"
 import { motion } from "framer-motion"
 
-export const SlideShow:FC = () => {
+interface SlideShowProps {
+   animationEnded: () => void
+}
+
+export const SlideShow:FC<SlideShowProps> = ({
+   animationEnded
+}) => {
    return (
       <motion.div 
          className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex"
@@ -16,7 +22,7 @@ export const SlideShow:FC = () => {
                delay: 1.2
             }
          }}
-         onAnimationEnd={() => {}}
+         onAnimationComplete={animationEnded}
       >
          <img 
             className="absolute inset-0 object-cover -z-10" 

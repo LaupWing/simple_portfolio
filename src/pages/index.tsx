@@ -25,8 +25,12 @@ const Home:NextPage = () => {
             <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                <ShortIntro />
                <section className="grid grid-cols-2 gap-6 overflow-hidden">
-                  <SlideShow />
-                  {data.map((item, i)=> (
+                  <SlideShow 
+                     animationEnded={() => {
+                        setShowCards(true)
+                     }}
+                  />
+                  {showCards && data.map((item, i)=> (
                      <ProjectCard 
                         description={item.description}
                         title={item.title}
