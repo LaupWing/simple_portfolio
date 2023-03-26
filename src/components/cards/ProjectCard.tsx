@@ -14,7 +14,17 @@ export const ProjectCard:FC<ProjectCardProps> = ({
    image
 }) => {
    return (
-      <article
+      <motion.article
+         initial={{
+            opacity: 0,
+            x: "100%"
+         }}
+         whileInView={{
+            opacity: 1,
+            transition: {
+               duration: 2
+            }
+         }}
          className="relative overflow-hidden justify-between flex aspect-square rounded-2xl cursor-pointer"
       >
          <motion.div
@@ -38,6 +48,6 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                alt=""
             />
          </motion.div>
-      </article>
+      </motion.article>
    )
 }
