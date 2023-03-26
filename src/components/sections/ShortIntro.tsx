@@ -6,6 +6,7 @@ import {
    IconLinkedIn,
 } from "~/components/elements"
 import { motion } from "framer-motion"
+import { SocialType } from "typings"
 
 export const ShortIntro:FC = () => {
    return (
@@ -80,7 +81,7 @@ export const ShortIntro:FC = () => {
 
 
 interface SocialProps {
-   name: string
+   name: SocialType
    url: string
 }
 
@@ -88,16 +89,16 @@ const Social:FC<SocialProps> = ({
    name,
    // url
 }) => {
-   const socials = {
+   const socials:Record<SocialType, any> = {
       instagram: IconInstagram,
-      linkedIn: IconLinkedIn,
+      linkedin: IconLinkedIn,
       dribble: IconDribbble,
       github: IconGithub
    }
 
    return (
       <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-         {socials[name as keyof socials]}
+         {socials[name]}
       </div>
    )
 }
