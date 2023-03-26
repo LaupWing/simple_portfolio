@@ -35,12 +35,11 @@ const Home:NextPage = (props) => {
             <MainNav />
             <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                <ShortIntro />
-               <section className="grid grid-cols-2 gap-6">
+               <section className="grid grid-cols-2 gap-6 overflow-hidden">
                   <SlideShow />
                   {data.map((item, i)=> (
                      <ProjectCard 
                         description={item.description}
-                        image={item.image}
                         title={item.title}
                         key={i}
                      />

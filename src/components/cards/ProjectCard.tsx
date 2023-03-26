@@ -22,7 +22,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             opacity: 1,
             x: 0,
             transition: {
-               duration: 2
+               duration: 0.5
             }
          }}
          className="relative overflow-hidden justify-between flex aspect-square rounded-2xl cursor-pointer"
