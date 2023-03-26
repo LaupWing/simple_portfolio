@@ -100,7 +100,7 @@ const Social:FC<SocialProps> = ({
    const IconComponent:IconType = socials[name]
 
    return (
-      <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
+      <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center hover:text-indigo-500 cursor-pointer duration-200">
          <IconComponent 
             size={24}
          />
