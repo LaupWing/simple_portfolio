@@ -1,9 +1,9 @@
-import { SiShopify } from "react-icons/si"
 import { 
    IconFirebase, 
    IconGatsby, 
    IconLaravel, 
    IconReact, 
+   IconShopify, 
    IconSolidity, 
    IconTypescript, 
    IconVue, 
@@ -19,7 +19,7 @@ export const Slide1Skills = () => {
          <IconVue size={34}/>
          <IconTypescript size={34}/>
          <IconLaravel size={34}/>
-         <SiShopify size={34}/>
+         <IconShopify size={34}/>
          <IconGatsby size={34}/>
          <IconSolidity size={34}/>
       </div>
