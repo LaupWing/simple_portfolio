@@ -4,22 +4,9 @@ import { MainNav } from "~/components/global"
 import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
-import { GetServerSideProps, NextPage } from "next"
-import config from "config"
-import { useEffect } from "react"
+import { NextPage } from "next"
 
-const Home:NextPage = (props) => {
-   useEffect(() => {
-      // const init = async () => {
-      //    const test = await Promise.all(props.data.map(async x => {
-      //       const res = await fetch(`https://api.github.com/repos/laupwing/${x}/commits`)
-      //       const data = await res.json()
-      //       return data
-      //    }))
-      //    console.log(test)
-      // }
-      // init()
-   },[])
+const Home:NextPage = () => {
    return (
       <>
          <Head>
@@ -52,15 +39,3 @@ const Home:NextPage = (props) => {
    )
 }
 export default Home
-
-// export const getServerSideProps:GetServerSideProps = async () => {
-//    const res = await fetch(config.github_endpoint + "laupwing/repos?sort=created&per_page=100")
-//    const data = await res.json()
-//    console.log(data)
-   
-//    return {
-//       props: {
-//          data: data.map(x => x.name)
-//       }
-//    }
-// }
