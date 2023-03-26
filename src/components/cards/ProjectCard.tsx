@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FC } from "react"
 import { IconArrow } from "~/components/elements"
-import image from "~/images/placeholder.png"
+import image from "~/images/lockkey.png"
 
 interface ProjectCardProps {
    title: string
