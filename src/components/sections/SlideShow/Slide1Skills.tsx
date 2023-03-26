@@ -1,4 +1,3 @@
-import { GetServerSideProps } from "next"
 import { SiFirebase, SiShopify, SiTypescript } from "react-icons/si"
 import { BsWordpress } from "react-icons/bs"
 import { GrGatsbyjs } from "react-icons/gr"
