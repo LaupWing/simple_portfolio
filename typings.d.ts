@@ -1,0 +1,1 @@
+export type SocialType = "instagram" | "linkedin" | "dribble" | "github" 
