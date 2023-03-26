@@ -3,6 +3,7 @@ import { SiFirebase, SiShopify, SiTypescript } from "react-icons/si"
 import { BsWordpress } from "react-icons/bs"
 import { GrGatsbyjs } from "react-icons/gr"
 import { IoLogoLaravel, IoLogoReact, IoLogoVue } from "react-icons/io5"
+import { IconSolidity } from "~/components/elements"
 
 export const Slide1Skills = () => {
    
@@ -16,6 +17,7 @@ export const Slide1Skills = () => {
          <IoLogoLaravel size={34}/>
          <SiShopify size={34}/>
          <GrGatsbyjs size={34}/>
+         <IconSolidity size={34}/>
       </div>
    )
 }
