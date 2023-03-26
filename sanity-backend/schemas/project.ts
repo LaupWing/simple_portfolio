@@ -55,6 +55,7 @@ export default defineType({
          name: "images",
          title: "Images",
          type: "array",
+         // @ts-ignore
          of:[
             {
                type: "image"
