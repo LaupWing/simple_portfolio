@@ -7,8 +7,16 @@ import {
 } from "~/components/elements"
 import { motion } from "framer-motion"
 import { SocialType } from "typings"
+import { IconType } from "react-icons"
 
 export const ShortIntro:FC = () => {
+   const socials: SocialType[] = [
+      "linkedin",
+      "github",
+      "dribble",
+      "instagram",
+   ]
+
    return (
       <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
          <motion.div 
@@ -39,18 +47,12 @@ export const ShortIntro:FC = () => {
                      Contact me
                   </button>
                   <div className="space-x-4 flex">
-                     <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-                        <IconInstagram size={24} />
-                     </div>
-                     <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-                        <IconLinkedIn size={24} />
-                     </div>
-                     <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-                        <IconDribbble size={24} />
-                     </div>
-                     <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-                        <IconGithub size={24} />
-                     </div>
+                     {socials.map(social => (
+                        <Social
+                           name={social}
+                           url=""
+                        />
+                     ))}
                   </div>
                </div>
             </div>
@@ -95,10 +97,13 @@ const Social:FC<SocialProps> = ({
       dribble: IconDribbble,
       github: IconGithub
    }
+   const IconComponent:IconType = socials[name]
 
    return (
       <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-         {socials[name]}
+         <IconComponent 
+            size={24}
+         />
       </div>
    )
 }
