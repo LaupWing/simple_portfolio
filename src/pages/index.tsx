@@ -1,4 +1,4 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { useState } from "react"
 import Head from "next/head"
 import { MainNav } from "~/components/global"
 import data from "../../data.json"
@@ -7,6 +7,8 @@ import { ProjectCard } from "~/components/cards"
 import { NextPage } from "next"
 
 const Home:NextPage = () => {
+   const [showCards, setShowCards] = useState(false)
+   
    return (
       <>
          <Head>
