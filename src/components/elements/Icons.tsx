@@ -3,7 +3,8 @@ import {
    AiFillInstagram,
    AiFillLinkedin,
    AiFillDribbbleCircle,
-   AiOutlineTwitter
+   AiOutlineTwitter,
+   AiFillGithub
 } from "react-icons/ai"
 import { 
    BsFillArrowUpRightCircleFill, 
@@ -68,4 +69,8 @@ export const IconShopify:IconType = (props) => {
 
 export const IconGatsby:IconType = (props) => {
    return <GrGatsbyjs {...props}/>
+}
+
+export const IconGithub:IconType = (props) => {
+   return <AiFillGithub {...props}/>
 }
