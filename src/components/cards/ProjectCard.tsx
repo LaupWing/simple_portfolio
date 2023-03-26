@@ -20,6 +20,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
          }}
          whileInView={{
             opacity: 1,
+            x: 0,
             transition: {
                duration: 2
             }
