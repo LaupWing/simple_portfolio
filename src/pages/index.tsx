@@ -1,6 +1,5 @@
 import { useState } from "react"
-import Head from "next/head"
-import { Layout, MainNav } from "~/components/global"
+import { Layout } from "~/components/global"
 import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
