@@ -1,18 +1,16 @@
-import { SiFirebase, SiShopify, SiTypescript } from "react-icons/si"
-import { BsWordpress } from "react-icons/bs"
+import { SiShopify } from "react-icons/si"
 import { GrGatsbyjs } from "react-icons/gr"
-import { IoLogoLaravel, IoLogoReact, IoLogoVue } from "react-icons/io5"
-import { IconFirebase, IconSolidity } from "~/components/elements"
+import { IconFirebase, IconLaravel, IconReact, IconSolidity, IconTypescript, IconVue, IconWordpress } from "~/components/elements"
 
 export const Slide1Skills = () => {
    return (
       <div className="flex-1 text-white flex space-x-6 justify-center items-center m-2">
          <IconFirebase size={34}/>
-         <BsWordpress size={34}/>
-         <IoLogoReact size={34}/>
-         <IoLogoVue size={34}/>
-         <SiTypescript size={34}/>
-         <IoLogoLaravel size={34}/>
+         <IconWordpress size={34}/>
+         <IconReact size={34}/>
+         <IconVue size={34}/>
+         <IconTypescript size={34}/>
+         <IconLaravel size={34}/>
          <SiShopify size={34}/>
          <GrGatsbyjs size={34}/>
          <IconSolidity size={34}/>
