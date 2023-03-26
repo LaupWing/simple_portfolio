@@ -1,17 +1,16 @@
 import { motion } from "framer-motion"
 import { FC } from "react"
 import { IconArrow } from "~/components/elements"
+import image from "~/images/placeholder.png"
 
 interface ProjectCardProps {
    title: string
    description: string
-   image: string
 }
 
 export const ProjectCard:FC<ProjectCardProps> = ({
    title,
-   description,
-   image
+   description
 }) => {
    return (
       <motion.article
@@ -44,7 +43,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             />
             <img
                className="absolute inset-0 w-full h-full object-cover -z-10"
-               src={image}
+               src={image.src}
                alt=""
             />
          </motion.div>
