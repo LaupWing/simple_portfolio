@@ -1,10 +1,22 @@
 import { FC } from "react"
 import { Carousel } from "react-responsive-carousel"
 import { Slide1Skills } from "./Slide1Skills"
+import { motion } from "framer-motion"
 
 export const SlideShow:FC = () => {
    return (
-      <div className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex">
+      <motion.div 
+         className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex"
+         initial={{
+            x: "-100%"
+         }}
+         animate={{
+            x: 0,
+            transition: {
+               delay: 1.2
+            }
+         }}
+      >
          <img 
             className="absolute inset-0 object-cover -z-10" 
             src="https://images.pexels.com/photos/249798/pexels-photo-249798.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
@@ -21,6 +33,6 @@ export const SlideShow:FC = () => {
             <div className="flex-1">Test</div>
             <div className="flex-1">Test</div>
          </Carousel>
-      </div>
+      </motion.div>
    )
 }
