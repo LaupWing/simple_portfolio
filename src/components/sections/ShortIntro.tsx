@@ -1,6 +1,7 @@
 import { FC } from "react"
 import { 
    IconDribbble, 
+   IconGithub, 
    IconInstagram, 
    IconLinkedIn, 
    IconTwitter 
@@ -48,7 +49,7 @@ export const ShortIntro:FC = () => {
                         <IconDribbble size={24} />
                      </div>
                      <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-                        <IconTwitter size={24} />
+                        <IconGithub size={24} />
                      </div>
                   </div>
                </div>
