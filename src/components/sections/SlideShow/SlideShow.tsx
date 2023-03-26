@@ -16,6 +16,7 @@ export const SlideShow:FC = () => {
                delay: 1.2
             }
          }}
+         onAnimationEnd={() => {}}
       >
          <img 
             className="absolute inset-0 object-cover -z-10" 
