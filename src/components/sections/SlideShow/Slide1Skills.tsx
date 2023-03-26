@@ -1,6 +1,14 @@
 import { SiShopify } from "react-icons/si"
-import { GrGatsbyjs } from "react-icons/gr"
-import { IconFirebase, IconLaravel, IconReact, IconSolidity, IconTypescript, IconVue, IconWordpress } from "~/components/elements"
+import { 
+   IconFirebase, 
+   IconGatsby, 
+   IconLaravel, 
+   IconReact, 
+   IconSolidity, 
+   IconTypescript, 
+   IconVue, 
+   IconWordpress 
+} from "~/components/elements"
 
 export const Slide1Skills = () => {
    return (
@@ -12,7 +20,7 @@ export const Slide1Skills = () => {
          <IconTypescript size={34}/>
          <IconLaravel size={34}/>
          <SiShopify size={34}/>
-         <GrGatsbyjs size={34}/>
+         <IconGatsby size={34}/>
          <IconSolidity size={34}/>
       </div>
    )
