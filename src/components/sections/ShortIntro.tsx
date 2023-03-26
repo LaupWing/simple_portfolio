@@ -84,7 +84,10 @@ interface SocialProps {
    url: string
 }
 
-const Social = () => {
+const Social:FC<SocialProps> = ({
+   name,
+   // url
+}) => {
    const socials = {
       instagram: IconInstagram,
       linkedIn: IconLinkedIn,
@@ -94,7 +97,7 @@ const Social = () => {
 
    return (
       <div className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center">
-         <IconInstagram size={24} />
+         {socials[name as keyof socials]}
       </div>
    )
 }
