@@ -41,7 +41,7 @@ export default defineType({
       defineField({
          name: "createdAt",
          title: "Created at",
-         type: "datetime"
+         type: "date"
       }),
       defineField({
          name: "thumbnail",
