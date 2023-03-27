@@ -1,6 +1,6 @@
 export type SocialType = "instagram" | "linkedin" | "dribble" | "github" 
 
-export interface Project {
+export interface ProjectType {
    skills: Skills[]
    name: string
    date: string

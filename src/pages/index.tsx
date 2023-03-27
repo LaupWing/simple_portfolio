@@ -5,8 +5,13 @@ import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
+import { ProjectType } from "typings"
 
-const Home:NextPage = (props) => {
+interface HomeProps {
+   projects: ProjectType[]
+}
+
+const Home:NextPage<HomeProps> = ({ projects }) => {
    const [showCards, setShowCards] = useState(false)
    
    return (
