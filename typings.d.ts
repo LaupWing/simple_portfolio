@@ -1,3 +1,5 @@
+import { SanityImageAssetDocument } from "@sanity/client"
+
 export type SocialType = "instagram" | "linkedin" | "dribble" | "github" 
 
 export interface ProjectType {
@@ -6,7 +8,7 @@ export interface ProjectType {
    date: string
    description: string
    tutorial: boolean
-   images: string[]
+   images: SanityImageAssetDocument[]
    _id: string
    github: string
    url: string
