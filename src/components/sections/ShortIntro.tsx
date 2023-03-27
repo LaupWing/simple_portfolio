@@ -47,8 +47,9 @@ export const ShortIntro:FC = () => {
                      Contact me
                   </button>
                   <div className="space-x-4 flex">
-                     {socials.map(social => (
+                     {socials.map((social) => (
                         <Social
+                           key={social}
                            name={social}
                            url=""
                         />
