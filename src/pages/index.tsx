@@ -13,6 +13,7 @@ interface HomeProps {
 
 const Home:NextPage<HomeProps> = ({ projects }) => {
    const [showCards, setShowCards] = useState(false)
+   console.log(projects)
    
    return (
       <Layout>
