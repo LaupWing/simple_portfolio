@@ -33,10 +33,11 @@ const Home:NextPage = (props) => {
 }
 export default Home
 
-export const getServersideProps:GetServerSideProps = async () => {
+export const getServerSideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
    const projects = await client.fetch(projectsQuery)
-
+   console.log(projects)
+   console.log("test")
    return {
       props: {
          projects
