@@ -4,8 +4,10 @@ import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
+import { client } from "~/sanity"
 
-const Home:NextPage = () => {
+const Home:NextPage = (props) => {
+   console.log(props)
    const [showCards, setShowCards] = useState(false)
    
    return (
@@ -33,11 +35,11 @@ export default Home
 
 export const getServersideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
-
+   const projects = await client.fetch(projectsQuery)
 
    return {
       props: {
-
+         projects
       }
    }
 }

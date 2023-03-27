@@ -1,7 +1,7 @@
 import blockContent from "./blockContent"
-import project from "./project"
+import projects from "./projects"
 
 export const schemaTypes = [
-   project,
+   projects,
    blockContent,
 ]
