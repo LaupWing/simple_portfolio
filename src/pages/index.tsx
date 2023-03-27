@@ -7,7 +7,6 @@ import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
 
 const Home:NextPage = (props) => {
-   console.log(props)
    const [showCards, setShowCards] = useState(false)
    
    return (
@@ -36,8 +35,7 @@ export default Home
 export const getServerSideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
    const projects = await client.fetch(projectsQuery)
-   console.log(projects)
-   console.log("test")
+   
    return {
       props: {
          projects
