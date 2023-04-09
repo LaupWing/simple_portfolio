@@ -16,8 +16,10 @@ export type SkillsType = [
    "wordpress"
 ]
 
+export type SkillsPartial = Array<SkillsType[number]>
+
 export interface ProjectType {
-   skills: SkillsType
+   skills: SkillsPartial
    name: string
    date: string
    description: string

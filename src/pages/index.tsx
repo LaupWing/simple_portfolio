@@ -22,10 +22,9 @@ const Home:NextPage<HomeProps> = ({ projects }) => {
                   setShowCards(true)
                }}
             />
-            {(projects && showCards) && projects.map((item, i)=> (
+            {(projects && showCards) && projects.map((project, i)=> (
                <ProjectCard 
-                  description={item.description}
-                  title={item.name}
+                  project={project}
                   index={i}
                   key={i}
                />
