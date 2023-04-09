@@ -10,8 +10,8 @@ export const MainNav = () => {
          text: "Home"
       },
       {
-         href: "/work",
-         text: "Work"
+         href: "/projects",
+         text: "Projects"
       },
       {
          href: "/about",
