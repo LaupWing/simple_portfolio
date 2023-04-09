@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Layout } from "~/components/global"
-import data from "../../data.json"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"

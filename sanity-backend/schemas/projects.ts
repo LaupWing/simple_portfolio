@@ -137,10 +137,6 @@ export default defineType({
                   title: "Tailwind", 
                   value: "tailwind"
                },
-               {
-                  title: "Css", 
-                  value: "css"
-               },
             ],
          },
       }),
