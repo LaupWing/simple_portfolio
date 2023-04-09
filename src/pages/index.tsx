@@ -4,6 +4,7 @@ import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
 import { ProjectType } from "typings"
+import { motion } from "framer-motion"
 
 interface HomePageProps {
    projects: ProjectType[]
@@ -22,11 +23,21 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                }}
             />
             {(projects && showCards) && projects.map((project, i)=> (
-               <ProjectCard 
-                  project={project}
-                  index={i}
-                  key={i}
-               />
+               <motion.article
+                  initial={{
+                     opacity: 0,
+                     x: i % 2 === 0 ? "-100%" : "100%"
+                  }}
+                  whileInView={{
+                     opacity: 1,
+                     x: 0
+                  }}
+               >
+                  <ProjectCard 
+                     project={project}
+                     key={i}
+                  />
+               </motion.article>
             ))}
          </section>
       </>

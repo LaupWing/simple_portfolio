@@ -84,7 +84,6 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
             {activeProjects.map((project, i)=> (
                <ProjectCard 
                   project={project}
-                  index={i}
                   key={i}
                />
             ))}
