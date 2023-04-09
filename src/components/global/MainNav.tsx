@@ -4,6 +4,8 @@ import { FC } from "react"
 import { motion } from "framer-motion"
 import { useAppDispatch } from "~/app/hooks"
 import { setInitialMenuLoaded } from "~/slices/siteSettings"
+import { SkillsType } from "typings"
+import config from "~/config"
  
 export const MainNav = () => {
    const links = [
@@ -13,7 +15,17 @@ export const MainNav = () => {
       },
       {
          href: "/projects",
-         text: "Projects"
+         text: "Projects",
+         query: (() => {
+            const q:Record<SkillsType[number], boolean>|{} = {} 
+
+            config.skills.forEach(_skill => {
+               // @ts-ignore
+               (q as SkillsType[number])[_skill] = true
+            })
+
+            return q
+         })()
       },
       {
          href: "/about",
@@ -69,6 +81,7 @@ export const MainNav = () => {
                      href={link.href}
                      text={link.text}
                      isLast={i === (links.length - 1)}
+                     query={link.query}
                   />
                ))}
             </motion.ul>
@@ -81,12 +94,14 @@ interface NavLinkProps {
    href: string
    text: string
    isLast: boolean
+   query?: Partial<Record<SkillsType[number], boolean>>
 }
 
 const NavLink:FC<NavLinkProps> = ({
    href,
    text,
-   isLast
+   isLast,
+   query = {}
 }) => {
    const router = useRouter()
    const isActive = router.pathname === href
@@ -106,7 +121,10 @@ const NavLink:FC<NavLinkProps> = ({
          }}
       >
          <Link 
-            href={href}
+            href={{
+               pathname: href,
+               query
+            }}
             className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
          >
             {text}

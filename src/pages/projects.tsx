@@ -75,13 +75,13 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
             animate="show"
          >
             <p className="mb-3 text-slate-300 pl-1 text-xs font-bold uppercase">I've used the technologies below, but not all projects are listed here.</p>
-            <div className="flex gap-x-4">
+            <div className="flex gap-x-4 overflow-hidden">
                <motion.button 
                   initial={{
-                     scaleX: 0,
+                     x: "-100%",
                   }}
                   animate={{
-                     scaleX: 1,
+                     x: 0,
                      transition: {
                         delay: 0.15 * config.skills.length
                      }
