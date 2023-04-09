@@ -4,10 +4,14 @@ import config from "~/config"
 import { useEffect, useState } from "react"
 import clsx from "clsx"
 import { useRouter } from "next/router"
+import { motion } from "framer-motion"
 
 const ProjectsDetails = () => {
-   const [activeSkills, setActiveSkills] = useState<SkillsPartial>([])
    const router = useRouter()
+   const [activeSkills, setActiveSkills] = useState<SkillsPartial>(router.query 
+      ? Object.keys(router.query) as SkillsPartial 
+      : []
+   )
 
    const toggleSkill = (skill: SkillsType[number]) => {
       if(activeSkills.includes(skill)){
