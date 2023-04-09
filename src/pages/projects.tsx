@@ -70,19 +70,21 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
    return (
       <>
          <motion.div 
-            className="flex flex-col w-full rounded p-4 bg-slate-100 border-2 border-slate-200"
+            className="flex flex-col w-full rounded overflow-hidden p-4 bg-slate-100 border-2 border-slate-200"
             variants={container}
             initial="hidden"
             animate="show"
          >
             <p className="mb-3 text-slate-300 pl-1 text-xs font-bold uppercase">I've used the technologies below, but not all projects are listed here.</p>
-            <div className="flex gap-x-4 overflow-hidden">
+            <div className="flex gap-x-4">
                <motion.button 
                   initial={{
                      x: "-100%",
+                     opacity: 0,
                   }}
                   animate={{
                      x: 0,
+                     opacity: 1,
                      transition: {
                         delay: 0.15 * config.skills.length,
                         duration: 0.15
@@ -134,41 +136,59 @@ const ProjectsContainer:FC<{
 }) => {
    const container = {
       hidden: {},
-      exit: {},
       show: {
          transition: {
             staggerChildren: 0.2,
-            delayChildren: 0.6,
          },
       },
    }
-   const item = {
-      hidden: { opacity: 0, y: 20 },
-      show: { opacity: 1, y: 0 },
-      exit: { opacity: 0 }
-   }
-
    return (
       <motion.section 
          className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden"
          variants={container}
          initial="hidden"
          animate="show"
-         exit="exit"
       >
          <AnimatePresence>
             {projects.map((project, i)=> (
-               <motion.article
-                  variants={item}
+               <ProjectCardWithAnimation
+                  index={i} 
+                  project={project}
                   key={i}
-               >
-                  <ProjectCard 
-                     project={project}
-                  />
-               </motion.article>
+               />
             ))}
          </AnimatePresence>
       </motion.section>
+   )
+}
+
+const ProjectCardWithAnimation:FC<{
+   project: ProjectType
+   index: number
+}> = ({ project, index }) => {
+   const item = {
+      hidden: { 
+         opacity: 0, 
+         y: 20 
+      },
+      show: { 
+         opacity: 1, 
+         y: 0 
+      }
+   }
+   return (
+      <motion.article
+         variants={item}
+         exit={{
+            opacity: 0,
+            x: index % 2 === 0 ? "-100%" : "100%"
+         }}
+         key={index}
+      >
+         <ProjectCard 
+            project={project}
+         />
+      </motion.article>
    )
 }
 
