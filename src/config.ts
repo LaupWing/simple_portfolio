@@ -13,6 +13,6 @@ export default {
       "tailwind",
       "typescript",
       "vue",
-      "wordpress",
-   ] as Array<SkillsType>
+      "wordpress"
+   ] as SkillsType
 }

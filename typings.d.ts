@@ -2,20 +2,22 @@ import { SanityImageAssetDocument } from "@sanity/client"
 
 export type SocialType = "instagram" | "linkedin" | "dribble" | "github" 
 
-export type SkillsType = "firebase" 
-   | "gatsby" 
-   | "laravel" 
-   | "nextjs" 
-   | "react" 
-   | "shopify" 
-   | "solidity"
-   | "tailwind"
-   | "typescript"
-   | "vue"
-   | "wordpress"
+export type SkillsType = [
+   "firebase",
+   "gatsby",
+   "laravel",
+   "nextjs",
+   "react",
+   "shopify",
+   "solidity",
+   "tailwind",
+   "typescript",
+   "vue",
+   "wordpress"
+]
 
 export interface ProjectType {
-   skills: Skills[]
+   skills: SkillsType
    name: string
    date: string
    description: string
