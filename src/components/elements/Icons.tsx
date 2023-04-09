@@ -16,7 +16,7 @@ import {
    IoLogoReact, 
    IoLogoVue 
 } from "react-icons/io5"
-import { SiFirebase, SiShopify, SiSolidity, SiTypescript } from "react-icons/si"
+import { SiFirebase, SiShopify, SiSolidity, SiTailwindcss, SiTypescript } from "react-icons/si"
 
 
 export const IconInstagram:IconType = (props) => {
@@ -77,4 +77,8 @@ export const IconGithub:IconType = (props) => {
 
 export const IconSolidity:IconType = (props) => {
    return <SiSolidity {...props}/>
+}
+
+export const IconTailwind:IconType = (props) => {
+   return <SiTailwindcss {...props}/>
 }

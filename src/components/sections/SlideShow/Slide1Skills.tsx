@@ -5,6 +5,7 @@ import {
    IconReact, 
    IconShopify, 
    IconSolidity, 
+   IconTailwind, 
    IconTypescript, 
    IconVue, 
    IconWordpress 
@@ -18,6 +19,7 @@ export const Slide1Skills = () => {
          <IconReact size={34}/>
          <IconVue size={34}/>
          <IconTypescript size={34}/>
+         <IconTailwind size={34}/>
          <IconLaravel size={34}/>
          <IconShopify size={34}/>
          <IconGatsby size={34}/>

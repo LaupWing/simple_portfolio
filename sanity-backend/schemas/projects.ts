@@ -137,6 +137,14 @@ export default defineType({
                   title: "Tailwind", 
                   value: "tailwind"
                },
+               {
+                  title: "Laravel", 
+                  value: "laravel"
+               },
+               {
+                  title: "Shopify", 
+                  value: "shopify"
+               },
             ],
          },
       }),
