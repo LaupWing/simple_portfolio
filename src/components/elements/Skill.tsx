@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { 
    IconFirebase, 
    IconGatsby, 
@@ -11,13 +12,18 @@ import {
    IconVue, 
    IconWordpress 
 } from "~/components/elements"
-import config from  "~/config"
-import { IconType } from "react-icons"
+import { IconBaseProps, IconType } from "react-icons"
+import { SkillsType } from "typings"
 
-type SkillIcon = typeof config.skills[number]
+interface SkillProps extends IconBaseProps {
+   skill: SkillsType[number]
+}
 
-export const Skill = () => {
-   const skills:Record<SkillIcon, IconType> = {
+export const Skill:FC<SkillProps> = ({
+   skill,
+   ...props
+}) => {
+   const skills:Record<SkillsType[number], IconType> = {
       firebase: IconFirebase,
       gatsby: IconGatsby,
       laravel: IconLaravel,
@@ -30,7 +36,8 @@ export const Skill = () => {
       vue: IconVue,
       wordpress: IconWordpress,
    }
+   const IconComponent = skills[skill]
    return (
-      <div>Skill</div>
+      <IconComponent {...props} />
    )
 }

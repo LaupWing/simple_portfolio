@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { FC } from "react"
 import { ProjectType } from "typings"
-import { IconArrow, IconFirebase, IconGatsby, IconLaravel } from "~/components/elements"
+import { IconArrow, IconFirebase, IconGatsby, IconLaravel, Skill } from "~/components/elements"
 import image from "~/images/lockkey.png"
 
 interface ProjectCardProps {
@@ -14,6 +14,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
    index
 }) => {
    const isEven = index % 2 === 0
+   console.log(project)
 
    return (
       <motion.article
@@ -38,9 +39,12 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                <h2 className="text-neutral-100 text-lg">{project.name}</h2>
                <p className="text-neutral-300 text-xs">{project.description}</p>
                <div className="mt-4 text-neutral-400 flex gap-4 group-hover:text-indigo-500 duration-500">
-                  <IconGatsby size={22} />
-                  <IconFirebase size={22} />
-                  <IconLaravel size={22} />
+                  {project.skills.map(skill => (
+                     <Skill 
+                        skill={skill}
+                        size={22}
+                     />
+                  ))}
                </div>
             </div>
             <IconArrow
