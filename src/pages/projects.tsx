@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { GetServerSideProps } from "next"
 import { client } from "~/sanity"
 
-const ProjectsDetails = () => {
+const ProjectsPage = () => {
    const router = useRouter()
    const [activeSkills, setActiveSkills] = useState<SkillsPartial>(router.query 
       ? Object.keys(router.query) as SkillsPartial 
@@ -75,7 +75,7 @@ const ProjectsDetails = () => {
       </>
    )
 }
-export default ProjectsDetails
+export default ProjectsPage
 
 export const getServerSideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
