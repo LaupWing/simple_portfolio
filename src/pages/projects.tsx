@@ -1,10 +1,10 @@
 import { ProjectType, SkillsPartial, SkillsType } from "typings"
 import { Skill } from "~/components/elements"
 import config from "~/config"
-import { useEffect, useState } from "react"
+import { FC, useEffect, useState } from "react"
 import clsx from "clsx"
 import { useRouter } from "next/router"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
 import { ProjectCard } from "~/components/cards"
@@ -17,6 +17,7 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
    projects
 }) => {
    const router = useRouter()
+   const [showCards, setShowCards] = useState(false)
    const [activeSkills, setActiveSkills] = useState<SkillsPartial>(router.query 
       ? Object.keys(router.query) as SkillsPartial 
       : []
@@ -97,10 +98,15 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
                >
                   Toggle
                </motion.button>
-               {config.skills.map(skill => (
+               {config.skills.map((skill, i) => (
                   <motion.button
                      variants={item}
                      key={skill}
+                     onAnimationComplete={() => {
+                        if(i === (config.skills.length - 1)){
+                           setShowCards(true)
+                        }
+                     }}
                   >
                      <Skill 
                         skill={skill}
@@ -115,18 +121,56 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
                ))}
             </div>
          </motion.div>
-         <section className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden">
-            {activeProjects.map((project, i)=> (
-               <ProjectCard 
-                  project={project}
-                  key={i}
-               />
-            ))}
-         </section>
+         {showCards && <ProjectsContainer projects={activeProjects} />}
       </>
    )
 }
 export default ProjectsPage
+
+const ProjectsContainer:FC<{
+   projects: ProjectType[]
+}> = ({
+   projects
+}) => {
+   const container = {
+      hidden: {},
+      exit: {},
+      show: {
+         transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.6,
+         },
+      },
+   }
+   const item = {
+      hidden: { opacity: 0, y: 20 },
+      show: { opacity: 1, y: 0 },
+      exit: { opacity: 0 }
+   }
+
+   return (
+      <motion.section 
+         className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden"
+         variants={container}
+         initial="hidden"
+         animate="show"
+         exit="exit"
+      >
+         <AnimatePresence>
+            {projects.map((project, i)=> (
+               <motion.article
+                  variants={item}
+                  key={i}
+               >
+                  <ProjectCard 
+                     project={project}
+                  />
+               </motion.article>
+            ))}
+         </AnimatePresence>
+      </motion.section>
+   )
+}
 
 export const getServerSideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
