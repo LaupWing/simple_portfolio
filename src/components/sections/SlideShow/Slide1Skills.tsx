@@ -15,7 +15,7 @@ import {
 export const Slide1Skills = () => {
    return (
       <div className="flex-1 text-white flex flex-col justify-center items-center mb-6">
-         <p className="mb-2 text-xs font-bold uppercase">I have utilized the technologies listed below, however, not all of the projects have been listed on this website. </p>
+         <p className="mb-2 text-xs font-bold uppercase">I've used the technologies below, but not all projects are listed here.</p>
          <div className="flex space-x-6">
             <IconFirebase size={34}/>
             <IconWordpress size={34}/>
