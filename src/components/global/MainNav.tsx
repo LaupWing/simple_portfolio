@@ -2,6 +2,8 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { FC } from "react"
 import { motion } from "framer-motion"
+import { useAppDispatch } from "~/app/hooks"
+import { setInitialMenuLoaded } from "~/slices/siteSettings"
  
 export const MainNav = () => {
    const links = [
@@ -66,6 +68,7 @@ export const MainNav = () => {
                      key={i}
                      href={link.href}
                      text={link.text}
+                     isLast={i === (links.length - 1)}
                   />
                ))}
             </motion.ul>
@@ -77,11 +80,13 @@ export const MainNav = () => {
 interface NavLinkProps {
    href: string
    text: string
+   isLast: boolean
 }
 
 const NavLink:FC<NavLinkProps> = ({
    href,
-   text
+   text,
+   isLast
 }) => {
    const router = useRouter()
    const isActive = router.pathname === href
@@ -89,10 +94,16 @@ const NavLink:FC<NavLinkProps> = ({
       hidden: { scale: 0, y: 100 },
       show: { scale: 1, y: 0 },
   }
+  const dispatch = useAppDispatch()
 
    return (
       <motion.li
          variants={item}
+         onAnimationComplete={() => {
+            if(isLast){
+               // dispatch(setInitialMenuLoaded(true))
+            }
+         }}
       >
          <Link 
             href={href}

@@ -19,7 +19,7 @@ export const SlideShow:FC<SlideShowProps> = ({
          animate={{
             x: 0,
             transition: {
-               delay: 1.2
+               delay: 0.4
             }
          }}
          onAnimationComplete={animationEnded}

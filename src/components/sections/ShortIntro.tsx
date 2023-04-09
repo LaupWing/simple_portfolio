@@ -27,7 +27,7 @@ export const ShortIntro:FC = () => {
             animate={{
                x: 0,
                transition: {
-                  delay: .9
+                  delay: .2
                },
                scale: 1
             }}
@@ -74,7 +74,7 @@ export const ShortIntro:FC = () => {
             animate={{
                x: 0,
                transition: {
-                  delay: 1.2
+                  delay: 0.4
                },
             }}
          />
