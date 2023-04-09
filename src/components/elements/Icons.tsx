@@ -16,7 +16,14 @@ import {
    IoLogoReact, 
    IoLogoVue 
 } from "react-icons/io5"
-import { SiFirebase, SiShopify, SiSolidity, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { 
+   SiFirebase, 
+   SiShopify, 
+   SiSolidity, 
+   SiTailwindcss, 
+   SiTypescript 
+} from "react-icons/si"
+import { TbBrandNextjs } from "react-icons/tb"
 
 
 export const IconInstagram:IconType = (props) => {
@@ -81,4 +88,8 @@ export const IconSolidity:IconType = (props) => {
 
 export const IconTailwind:IconType = (props) => {
    return <SiTailwindcss {...props}/>
+}
+
+export const IconNextjs:IconType = (props) => {
+   return <TbBrandNextjs {...props}/>
 }
