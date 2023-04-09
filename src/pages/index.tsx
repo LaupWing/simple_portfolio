@@ -32,6 +32,7 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                      opacity: 1,
                      x: 0
                   }}
+                  key={project._id}
                >
                   <ProjectCard 
                      project={project}
