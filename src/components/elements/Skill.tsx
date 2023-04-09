@@ -11,9 +11,13 @@ import {
    IconVue, 
    IconWordpress 
 } from "~/components/elements"
+import config from  "~/config"
+import { IconType } from "react-icons"
+
+type SkillIcon = typeof config.skills[number]
 
 export const Skill = () => {
-   const skills = {
+   const skills:Record<SkillIcon, IconType> = {
       firebase: IconFirebase,
       gatsby: IconGatsby,
       laravel: IconLaravel,
