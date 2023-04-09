@@ -83,7 +83,8 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
                   animate={{
                      x: 0,
                      transition: {
-                        delay: 0.15 * config.skills.length
+                        delay: 0.15 * config.skills.length,
+                        duration: 0.15
                      }
                   }}
                   className={clsx(

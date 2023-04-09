@@ -17,11 +17,10 @@ export const MainNav = () => {
          href: "/projects",
          text: "Projects",
          query: (() => {
-            const q:Record<SkillsType[number], boolean>|{} = {} 
+            const q:Record<SkillsType[number], boolean> = {} as Record<SkillsType[number], boolean> 
 
             config.skills.forEach(_skill => {
-               // @ts-ignore
-               (q as SkillsType[number])[_skill] = true
+               q[_skill] = true
             })
 
             return q
