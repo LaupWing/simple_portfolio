@@ -1,4 +1,5 @@
 import { SanityImageAssetDocument } from "@sanity/client"
+import { SanityImageSource }  from "@sanity/image-url/lib/types/types"
 
 export type SocialType = "instagram" | "linkedin" | "dribble" | "github" 
 
@@ -34,4 +35,5 @@ export interface ProjectType {
    slug: {
       current: string
    }
+   thumbnail: SanityImageSource
 }

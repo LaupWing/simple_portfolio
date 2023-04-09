@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { FC } from "react"
 import { ProjectType } from "typings"
 import { IconArrow, IconFirebase, IconGatsby, IconLaravel, Skill } from "~/components/elements"
-import image from "~/images/lockkey.png"
+import { urlFor } from "~/sanity"
 
 interface ProjectCardProps {
    project: ProjectType
@@ -14,7 +14,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
    index
 }) => {
    const isEven = index % 2 === 0
-   console.log(project)
+   const image = urlFor(project.thumbnail)
 
    return (
       <motion.article
@@ -41,6 +41,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
                <div className="mt-4 text-neutral-400 flex gap-4 group-hover:text-indigo-500 duration-500">
                   {project.skills.map(skill => (
                      <Skill 
+                        key={skill}
                         skill={skill}
                         size={22}
                      />
@@ -53,7 +54,7 @@ export const ProjectCard:FC<ProjectCardProps> = ({
             />
             <img
                className="absolute inset-0 w-full h-full object-cover -z-10"
-               src={image.src}
+               src={image.url()}
                alt=""
             />
          </motion.div>
