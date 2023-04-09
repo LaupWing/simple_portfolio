@@ -57,7 +57,7 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
             <div className="flex gap-x-4">
                <button 
                   className={clsx(
-                     "text-xs border-2 rounded border-indigo-500 uppercase font-bold px-4",
+                     "text-xs border-2 duration-200 rounded border-indigo-500 uppercase font-bold px-4",
                      isAllActive
                         ? "text-white bg-indigo-500"
                         : "text-indigo-500 bg-transparent"
