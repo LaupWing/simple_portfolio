@@ -24,6 +24,7 @@ export const Slide1Skills = () => {
          <IconShopify size={34}/>
          <IconGatsby size={34}/>
          <IconSolidity size={34}/>
+         <IconShopify size={34}/>
       </div>
    )
 }

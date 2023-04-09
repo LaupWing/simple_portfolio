@@ -106,6 +106,10 @@ export default defineType({
                   value: "firebase"
                },
                {
+                  title: "Wordpress", 
+                  value: "wordpress"
+               },
+               {
                   title: "React", 
                   value: "react"
                },
@@ -114,24 +118,8 @@ export default defineType({
                   value: "vue"
                },
                {
-                  title: "Solidity", 
-                  value: "solidity"
-               },
-               {
-                  title: "Nextjs", 
-                  value: "nextjs"
-               },
-               {
                   title: "Typescript", 
                   value: "typescript"
-               },
-               {
-                  title: "Wordpress", 
-                  value: "wordpress"
-               },
-               {
-                  title: "Gatsby", 
-                  value: "gatsby"
                },
                {
                   title: "Tailwind", 
@@ -140,6 +128,18 @@ export default defineType({
                {
                   title: "Laravel", 
                   value: "laravel"
+               },
+               {
+                  title: "Nextjs", 
+                  value: "nextjs"
+               },
+               {
+                  title: "Gatsby", 
+                  value: "gatsby"
+               },
+               {
+                  title: "Solidity", 
+                  value: "solidity"
                },
                {
                   title: "Shopify", 
