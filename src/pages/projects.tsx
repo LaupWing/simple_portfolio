@@ -1,14 +1,21 @@
-import { SkillsPartial, SkillsType } from "typings"
+import { ProjectType, SkillsPartial, SkillsType } from "typings"
 import { Skill } from "~/components/elements"
 import config from "~/config"
 import { useEffect, useState } from "react"
 import clsx from "clsx"
 import { useRouter } from "next/router"
 import { motion } from "framer-motion"
-import { GetServerSideProps } from "next"
+import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
+import { ProjectCard } from "~/components/cards"
 
-const ProjectsPage = () => {
+interface ProjectPageProps {
+   projects: ProjectType[]
+}
+
+const ProjectsPage:NextPage<ProjectPageProps> = ({
+   projects
+}) => {
    const router = useRouter()
    const [activeSkills, setActiveSkills] = useState<SkillsPartial>(router.query 
       ? Object.keys(router.query) as SkillsPartial 
@@ -22,7 +29,7 @@ const ProjectsPage = () => {
          setActiveSkills((prev) => [...prev, skill])
       }
    }
-
+   console.log(projects)
    useEffect(() => {
       const query:Partial<Record<SkillsType[number], boolean>> = {}
       activeSkills.forEach(_skill => {
@@ -41,7 +48,8 @@ const ProjectsPage = () => {
          setActiveSkills(config.skills)
       }
    }
-   
+   const activeProjects = projects.filter(project => activeSkills.find(x => project.skills.includes(x)) )
+
    return (
       <>
          <div className="flex flex-col w-full rounded p-4 bg-slate-100 border-2 border-slate-200">
@@ -72,6 +80,15 @@ const ProjectsPage = () => {
                ))}
             </div>
          </div>
+         <section className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden">
+            {activeProjects.map((project, i)=> (
+               <ProjectCard 
+                  project={project}
+                  index={i}
+                  key={i}
+               />
+            ))}
+         </section>
       </>
    )
 }
