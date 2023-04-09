@@ -1,10 +1,13 @@
 import Head from "next/head"
 import { FC, PropsWithChildren } from "react"
 import { MainNav } from "./MainNav"
+import { useAppSelector } from "~/app/hooks"
 
 export const Layout:FC<PropsWithChildren> = ({
    children
 }) => {
+   const { initialNavLoaded } = useAppSelector(state => state.siteSettings)
+
    return (
       <>
          <Head>
@@ -18,9 +21,11 @@ export const Layout:FC<PropsWithChildren> = ({
          </Head>
          <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto pb-10 fixed bg-white">
             <MainNav />
-            <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
-               { children }
-            </main>
+            {initialNavLoaded && (
+               <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
+                  { children }
+               </main>
+            )}
          </div>
       </>
    )

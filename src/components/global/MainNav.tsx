@@ -101,7 +101,7 @@ const NavLink:FC<NavLinkProps> = ({
          variants={item}
          onAnimationComplete={() => {
             if(isLast){
-               // dispatch(setInitialMenuLoaded(true))
+               dispatch(setInitialMenuLoaded(true))
             }
          }}
       >
