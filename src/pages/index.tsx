@@ -13,7 +13,6 @@ interface HomeProps {
 
 const Home:NextPage<HomeProps> = ({ projects }) => {
    const [showCards, setShowCards] = useState(false)
-   console.log(projects)
    
    return (
       <Layout>
@@ -24,10 +23,10 @@ const Home:NextPage<HomeProps> = ({ projects }) => {
                   setShowCards(true)
                }}
             />
-            {showCards && data.map((item, i)=> (
+            {(projects && showCards) && projects.map((item, i)=> (
                <ProjectCard 
                   description={item.description}
-                  title={item.title}
+                  title={item.name}
                   index={i}
                   key={i}
                />
