@@ -1,3 +1,5 @@
+import { SkillsType } from "typings";
+
 export default {
    github_endpoint: "https://api.github.com/users/",
    skills: [
@@ -12,5 +14,5 @@ export default {
       "typescript",
       "vue",
       "wordpress",
-   ]
+   ] as Array<SkillsType>
 }
