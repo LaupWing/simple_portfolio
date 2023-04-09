@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { Layout } from "~/components/global"
 import { ShortIntro, SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
@@ -14,7 +13,7 @@ const Home:NextPage<HomeProps> = ({ projects }) => {
    const [showCards, setShowCards] = useState(false)
    
    return (
-      <Layout>
+      <>
          <ShortIntro />
          <section className="grid md:grid-cols-2 grid-cols-1 gap-6 overflow-hidden">
             <SlideShow 
@@ -30,7 +29,7 @@ const Home:NextPage<HomeProps> = ({ projects }) => {
                />
             ))}
          </section>
-      </Layout>
+      </>
    )
 }
 export default Home
