@@ -103,7 +103,9 @@ const NavLink:FC<NavLinkProps> = ({
    query = {}
 }) => {
    const router = useRouter()
-   const isActive = router.pathname === href
+   const isActive = href === "/" 
+      ? router.pathname === "/"
+      : router.pathname.includes(href)
    const item = {
       hidden: { scale: 0, y: 100 },
       show: { scale: 1, y: 0 },
