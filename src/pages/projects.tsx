@@ -1,10 +1,13 @@
 import { SkillsPartial, SkillsType } from "typings"
 import { Skill } from "~/components/elements"
 import config from "~/config"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import clsx from "clsx"
+import { useRouter } from "next/router"
 
 const ProjectsDetails = () => {
    const [activeSkills, setActiveSkills] = useState<SkillsPartial>([])
+   const router = useRouter()
 
    const toggleSkill = (skill: SkillsType[number]) => {
       if(activeSkills.includes(skill)){
@@ -12,8 +15,17 @@ const ProjectsDetails = () => {
       }else {
          setActiveSkills((prev) => [...prev, skill])
       }
-      console.log(activeSkills)
    }
+
+   useEffect(() => {
+      const query:Partial<Record<SkillsType[number], boolean>> = {}
+      activeSkills.forEach(_skill => {
+         query[_skill] = true
+      })
+      router.push({
+         query   
+      })
+   }, [activeSkills])
 
    return (
       <>
@@ -25,7 +37,10 @@ const ProjectsDetails = () => {
                      skill={skill}
                      size={30}
                      key={skill}
-                     className="text-slate-300 cursor-pointer"
+                     className={clsx(
+                        "cursor-pointer duration-200",
+                        !activeSkills.includes(skill) ? "text-slate-300" : "text-indigo-500" 
+                     )}
                      onClick={() => toggleSkill(skill)}
                   />
                ))}
