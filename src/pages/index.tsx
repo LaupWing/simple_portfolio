@@ -5,11 +5,11 @@ import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
 import { ProjectType } from "typings"
 
-interface HomeProps {
+interface HomePageProps {
    projects: ProjectType[]
 }
 
-const Home:NextPage<HomeProps> = ({ projects }) => {
+const HomePage:NextPage<HomePageProps> = ({ projects }) => {
    const [showCards, setShowCards] = useState(false)
    
    return (
@@ -32,7 +32,7 @@ const Home:NextPage<HomeProps> = ({ projects }) => {
       </>
    )
 }
-export default Home
+export default HomePage
 
 export const getServerSideProps:GetServerSideProps = async () => {
    const projectsQuery = "*[_type == 'projects']"
