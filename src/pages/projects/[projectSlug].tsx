@@ -1,4 +1,3 @@
-import { PortableText } from "@portabletext/react"
 import { GetServerSideProps, NextPage } from "next"
 import { ProjectType } from "typings"
 import { IconExternal, IconGithub, Skill } from "~/components/elements"
