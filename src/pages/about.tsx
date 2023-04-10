@@ -31,12 +31,12 @@ const AboutPage = () => {
                      human experiences.
                   </p>
                </div>
+               <div className="absolute inset-0 h-full bg-white/40 backdrop-blur-3xl -z-[5]" />
                <img
                   className="absolute inset-0 object-cover -z-10"
                   src="images/profile.jpg"
                   alt="profile image"
                />
-               <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10" />
             </div>
             <div className="col-span-3 flex gap-6">
                <div className="space-y-4 flex p-4 rounded-2xl flex-col bg-slate-200 border-slate-300 border-2">
@@ -85,6 +85,24 @@ const AboutPage = () => {
                         <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
                            <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
                         </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div className="col-span-3 flex flex-col border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl">
+               <h3 className="uppercase text-sm font-bold text-slate-500">Coding skills</h3>
+               <p className="uppercase text-xs font-bold text-slate-400 mt-1">These are all coding where I am either working on or are very familiar with.</p>
+               <div className="flex flex-col gap-y-4 text-xs mt-4">
+                  <div className="flex items-center">
+                     <span className="font-bold uppercase text-slate-400 w-32">Vue</span>
+                     <div className="flex-1 border-2 p-0.5 border-emerald-500 rounded-full">
+                        <div className="h-1.5 bg-emerald-500 rounded-full w-[80%]"/>
+                     </div>
+                  </div>
+                  <div className="flex items-center">
+                     <span className="font-bold uppercase text-slate-400 w-32">React</span>
+                     <div className="flex-1 border-2 p-0.5 border-emerald-500 rounded-full">
+                        <div className="h-1.5 bg-emerald-500 rounded-full w-[80%]"/>
                      </div>
                   </div>
                </div>
