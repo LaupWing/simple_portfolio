@@ -22,7 +22,7 @@ export type SkillsPartial = Array<SkillsType[number]>
 export interface ProjectType {
    skills: SkillsPartial
    name: string
-   date: string
+   createdAt: string
    description: string
    tutorial: boolean
    images: SanityImageAssetDocument[]
