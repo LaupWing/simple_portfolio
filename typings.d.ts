@@ -25,7 +25,7 @@ export interface ProjectType {
    createdAt: string
    description: string
    tutorial: boolean
-   images: SanityImageSource[]
+   images: SanityImageAssetDocument[]
    _id: string
    github: string
    url: string
