@@ -14,7 +14,8 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
    }
    return (
       <>
-         <header className="p-2 w-full grid grid-cols-2 gap-6 ">
+         <button className="mr-auto bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-1 rounded shadow tracking-wider">Back</button>
+         <header className="w-full grid grid-cols-2 gap-6 ">
             <Carousel 
                className="aspect-square rounded-2xl overflow-hidden flex" 
                showThumbs={false}
