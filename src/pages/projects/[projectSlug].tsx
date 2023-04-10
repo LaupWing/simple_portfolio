@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from "next"
+import { Carousel } from "react-responsive-carousel"
 import { ProjectType } from "typings"
 import { IconExternal, IconGithub, Skill } from "~/components/elements"
 import { BlockContent } from "~/components/sections"
@@ -9,11 +10,26 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
    return (
       <>
          <header className="p-2 w-full grid grid-cols-2 gap-6 ">
-            <img 
-               className="aspect-square rounded-2xl" 
-               src={urlFor(project.thumbnail).url()} 
-               alt="Image" 
-            />
+            <Carousel 
+               className="aspect-square rounded-2xl overflow-hidden flex" 
+               showThumbs={false}
+               showStatus={false}
+            >
+               <div>
+                  <img 
+                     className="" 
+                     src={urlFor(project.thumbnail).url()} 
+                     alt="Image" 
+                  />
+               </div>
+               <div>
+                  <img 
+                     className="" 
+                     src={urlFor(project.thumbnail).url()} 
+                     alt="Image" 
+                  />
+               </div>
+            </Carousel>
             <div className="aspect-square relative rounded-2xl overflow-hidden">
                <img
                   src={urlFor(project.thumbnail).url()} 
