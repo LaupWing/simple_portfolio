@@ -15,20 +15,9 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                showThumbs={false}
                showStatus={false}
             >
-               <div>
-                  <img 
-                     className="" 
-                     src={urlFor(project.thumbnail).url()} 
-                     alt="Image" 
-                  />
-               </div>
-               <div>
-                  <img 
-                     className="" 
-                     src={urlFor(project.thumbnail).url()} 
-                     alt="Image" 
-                  />
-               </div>
+               {project.images.map(image => (
+                  <img className="flex-1 h-full w-full object-cover" src={urlFor(image).url()} alt="" />
+               ))}
             </Carousel>
             <div className="aspect-square relative rounded-2xl overflow-hidden">
                <img
