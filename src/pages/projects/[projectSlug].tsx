@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from "next"
 import { ProjectType } from "typings"
-import { Skill } from "~/components/elements"
+import { IconExternal, IconGithub, Skill } from "~/components/elements"
 import { client, urlFor } from "~/sanity"
 
 const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
@@ -31,6 +31,10 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                      ))}
                   </div>
                   <p className="text-sm text-slate-900">{project.description}</p>
+                  <div className="flex gap-x-4 mt-4">
+                     <IconGithub size={30} />
+                     <IconExternal size={30} />
+                  </div>
                </div>
             </div>
          </header>

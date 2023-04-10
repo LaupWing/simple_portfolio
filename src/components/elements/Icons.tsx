@@ -96,5 +96,5 @@ export const IconNextjs:IconType = (props) => {
 }
 
 export const IconExternal:IconType = (props) => {
-   return <HiOutlineExternalLink />
+   return <HiOutlineExternalLink {...props} />
 }
