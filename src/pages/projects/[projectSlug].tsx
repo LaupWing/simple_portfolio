@@ -18,7 +18,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   src={urlFor(project.thumbnail).url()} 
                   alt="Image" 
                />
-               <div className="inset-0 p-6 absolute bg-slate-100/40 backdrop-blur">
+               <div className="inset-0 p-6 absolute flex flex-col bg-slate-100/40 backdrop-blur">
                   <span className="font-bold text-sm text-slate-900/50">{ project.createdAt }</span>
                   <h2 className="text-slate-900 font-bold text-xl">{ project.name }</h2>
                   <div className="flex gap-x-4 my-2 text-indigo-700">
@@ -31,9 +31,13 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                      ))}
                   </div>
                   <p className="text-sm text-slate-900">{project.description}</p>
-                  <div className="flex gap-x-4 mt-4">
-                     <IconGithub size={30} />
-                     <IconExternal size={30} />
+                  <div className="flex gap-x-4 mt-auto">
+                     <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
+                        <IconGithub size={24} />
+                     </button>
+                     <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
+                        <IconExternal size={24} />
+                     </button>
                   </div>
                </div>
             </div>
