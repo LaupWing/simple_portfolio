@@ -9,6 +9,7 @@
       "lint": "next lint"
    },
    "dependencies": {
+      "@portabletext/react": "^2.0.2",
       "@reduxjs/toolkit": "^1.9.3",
       "@sanity/client": "^5.3.2",
       "@sanity/image-url": "^1.0.2",

@@ -42,6 +42,9 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                </div>
             </div>
          </header>
+         <div className="w-full">
+
+         </div>
       </>
    )
 }
