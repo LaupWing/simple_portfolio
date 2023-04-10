@@ -18,7 +18,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   alt="Image" 
                />
                <div className="inset-0 p-4 absolute bg-slate-100/30 backdrop-blur">
-                  <h2 className="text-slate-900 font-bold text-2xl">{ project.name }</h2>
+                  <h2 className="text-slate-900 font-bold text-xl">{ project.name }</h2>
                </div>
             </div>
          </header>
