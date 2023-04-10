@@ -1,3 +1,4 @@
+import { PortableText } from "@portabletext/react"
 import { GetServerSideProps, NextPage } from "next"
 import { ProjectType } from "typings"
 import { IconExternal, IconGithub, Skill } from "~/components/elements"
@@ -42,8 +43,8 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                </div>
             </div>
          </header>
-         <div className="w-full">
-
+         <div className="w-full p-6 bg-slate-100 border- rounded-2xl shadow">
+            <PortableText value={project.content} />
          </div>
       </>
    )

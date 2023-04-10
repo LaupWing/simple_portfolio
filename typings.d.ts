@@ -36,4 +36,5 @@ export interface ProjectType {
       current: string
    }
    thumbnail: SanityImageSource
+   content: any[]
 }
