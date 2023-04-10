@@ -18,10 +18,10 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   src={urlFor(project.thumbnail).url()} 
                   alt="Image" 
                />
-               <div className="inset-0 p-4 absolute bg-slate-100/40 backdrop-blur">
+               <div className="inset-0 p-6 absolute bg-slate-100/40 backdrop-blur">
                   <span className="font-bold text-sm text-slate-900/50">{ project.createdAt }</span>
                   <h2 className="text-slate-900 font-bold text-xl">{ project.name }</h2>
-                  <div className="flex gap-x-4 mt-2 text-indigo-700">
+                  <div className="flex gap-x-4 my-2 text-indigo-700">
                      {project.skills.map(skill => (
                         <Skill 
                            key={skill}
@@ -30,7 +30,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                         />
                      ))}
                   </div>
-                  <p className="mt-1 text-sm text-slate-900">{project.description}</p>
+                  <p className="text-sm text-slate-900">{project.description}</p>
                </div>
             </div>
          </header>
