@@ -27,10 +27,17 @@ const ImageComponent:FC<any> = ({value, isInline}) => {
 
 const components: PortableTextComponents = {
    types: {
-      image: ImageComponent
+      image: ImageComponent,
    },
    marks: {
-      
+   },
+   block: {
+      h2: ({children}) => <h2 className="text-3xl mb-2">{children}</h2>,
+      h3: ({children}) => <h3 className="text-2xl mb-2">{children}</h3>,
+      normal: ({children}) => <p className="mb-2">{children}</p>
+   },
+   list: {
+      bullet: ({children}) => <ul className="mb-2">{children}</ul>
    }
 }
 
