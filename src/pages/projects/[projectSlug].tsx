@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { GetServerSideProps, NextPage } from "next"
+import { useRouter } from "next/router"
 import { useState } from "react"
 import { Carousel } from "react-responsive-carousel"
 import { ProjectType } from "typings"
@@ -12,9 +13,16 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
    const changedItem = (index:number) => {
       setCurrentImage(project.images[index])
    }
+   const router = useRouter()
+
    return (
       <>
-         <button className="mr-auto bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-1 rounded shadow tracking-wider">Back</button>
+         <button 
+            className="mr-auto bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-1 rounded shadow tracking-wider"
+            onClick={() => router.back()}
+         >
+            Back
+         </button>
          <header className="w-full grid grid-cols-2 gap-6 ">
             <Carousel 
                className="aspect-square rounded-2xl overflow-hidden flex" 
@@ -31,7 +39,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   />
                ))}
             </Carousel>
-            <div className="aspect-square relative rounded-2xl overflow-hidden">
+            <div className="aspect-square shadow relative rounded-2xl overflow-hidden">
                <AnimatePresence>
                   <motion.img
                      src={urlFor(currentImage).url()} 
@@ -42,7 +50,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                      exit={{ opacity: 0 }}
                   />
                </AnimatePresence>
-               <div className="inset-0 p-6 absolute flex flex-col bg-slate-100/70 backdrop-blur">
+               <div className="inset-0 p-6 absolute flex flex-col bg-slate-100/80 backdrop-blur">
                   <span className="font-bold text-sm text-slate-900/50">{ project.createdAt }</span>
                   <h2 className="text-slate-900 font-bold text-xl">{ project.name }</h2>
                   <div className="flex gap-x-4 my-2 text-indigo-600">
