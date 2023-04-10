@@ -16,6 +16,7 @@ import {
    IoLogoReact, 
    IoLogoVue 
 } from "react-icons/io5"
+import { HiOutlineExternalLink } from "react-icons/hi"
 import { 
    SiFirebase, 
    SiShopify, 
@@ -92,4 +93,8 @@ export const IconTailwind:IconType = (props) => {
 
 export const IconNextjs:IconType = (props) => {
    return <TbBrandNextjs {...props}/>
+}
+
+export const IconExternal:IconType = (props) => {
+   return <HiOutlineExternalLink />
 }
