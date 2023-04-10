@@ -33,7 +33,7 @@ const components: PortableTextComponents = {
    }
 }
 
-export const BlockConent:FC<{
+export const BlockContent:FC<{
    input: any[]
 }> = ({
    input
