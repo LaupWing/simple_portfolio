@@ -20,6 +20,7 @@ const ImageComponent:FC<any> = ({value, isInline}) => {
          }}
          alt={value.alt || ""} 
          loading="lazy"
+         className="max-w-md"
       />
    )
 }
@@ -29,16 +30,16 @@ const components: PortableTextComponents = {
       image: ImageComponent
    },
    marks: {
-
+      
    }
 }
 
 export const BlockContent:FC<{
-   input: any[]
+   value: any[]
 }> = ({
-   input
+   value
 }) => {
    return (
-      <PortableText value={input} components={components} />
+      <PortableText value={value} components={components} />
    )
 }

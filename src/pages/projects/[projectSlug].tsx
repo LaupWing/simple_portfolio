@@ -2,6 +2,7 @@ import { PortableText } from "@portabletext/react"
 import { GetServerSideProps, NextPage } from "next"
 import { ProjectType } from "typings"
 import { IconExternal, IconGithub, Skill } from "~/components/elements"
+import { BlockContent } from "~/components/sections"
 import { client, urlFor } from "~/sanity"
 
 const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
@@ -44,7 +45,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
             </div>
          </header>
          <div className="w-full p-6 bg-slate-100 border-2 border-slate-200 rounded-2xl shadow">
-            <PortableText value={project.content} />
+            <BlockContent value={project.content} />
          </div>
       </>
    )
