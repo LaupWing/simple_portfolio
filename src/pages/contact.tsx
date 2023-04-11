@@ -1,3 +1,5 @@
+import { IconSend } from "~/components/elements"
+
 const ContactPage = () => {
    return (
       <section className="p-8 border-2 border-slate-200 w-full rounded-2xl bg-slate-100">
@@ -43,7 +45,10 @@ const ContactPage = () => {
                   
                </textarea>
             </div>
-            <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider">Lets connect!</button>
+            <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider flex items-center justify-center">
+               Lets connect!
+               <IconSend className="ml-1" size={14} />
+            </button>
          </form>
       </section>
    )
