@@ -87,35 +87,3 @@ export const ShortIntro:FC = () => {
       </section>
    )
 }
-
-
-// interface SocialProps {
-//    name: SocialType
-//    url: string
-// }
-
-// const Social:FC<SocialProps> = ({
-//    name,
-//    // url
-// }) => {
-//    const socials:Record<SocialType, any> = {
-//       instagram: IconInstagram,
-//       linkedin: IconLinkedIn,
-//       dribble: IconDribbble,
-//       github: IconGithub
-//    }
-//    const IconComponent:IconType = socials[name]
-
-//    return (
-//       <motion.div 
-//          className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center hover:text-indigo-500 cursor-pointer duration-200"
-//          whileHover={{
-//             scale: 0.9,
-//          }}
-//       >
-//          <IconComponent 
-//             size={24}
-//          />
-//       </motion.div>
-//    )
-// }
