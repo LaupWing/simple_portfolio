@@ -17,12 +17,23 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
 
    return (
       <>
-         <button 
+         <motion.button 
             className="mr-auto bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-1 rounded shadow tracking-wider"
             onClick={() => router.back()}
+            initial={{
+               x: "-100%",
+               opacity: 0
+            }}
+            animate={{
+               x: 0,
+               opacity: 1,
+               transition: {
+                  delay: 1.2
+               }
+            }}
          >
             Back
-         </button>
+         </motion.button>
          <header className="w-full grid grid-cols-2 gap-6 ">
             <motion.div
                className="aspect-square rounded-2xl overflow-hidden flex"
