@@ -175,7 +175,20 @@ const TechSkills = () => {
    }))
 
    return (
-      <div className="col-span-3 flex flex-col border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl">
+      <motion.div 
+         className="col-span-3 flex flex-col border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl"
+         initial={{
+            y: "100%",
+            opacity: 0,
+         }}
+         animate={{
+            y: 0,
+            opacity: 1,
+            transition:{
+               delay: 1.6
+            }
+         }}
+      >
          <h3 className="uppercase text-sm font-bold text-slate-500">Coding skills</h3>
          <p className="uppercase text-xs font-bold text-slate-400 mt-1">These are all coding where I am either working on or are very familiar with.</p>
          <div className="flex flex-col gap-y-4 text-xs mt-4">
@@ -188,6 +201,6 @@ const TechSkills = () => {
                />
             ))}
          </div>
-      </div>
+      </motion.div>
    )
 }
