@@ -1,4 +1,4 @@
-import { SocialType } from "typings"
+import { SkillsType, SocialType } from "typings"
 import { Skill, SkillLevel, Social } from "~/components/elements"
 import config from "~/config"
 
@@ -35,6 +35,19 @@ const AboutPage = () => {
          progress: 95
       },
    ]
+   const techSkillsProgress:Record<SkillsType[number], number> = {
+      firebase: 90,
+      gatsby: 70,
+      laravel: 40,
+      nextjs: 80,
+      react: 90,
+      vue: 90,
+      shopify: 70,
+      solidity: 70,
+      tailwind: 95,
+      typescript: 85,
+      wordpress: 75
+   }
    const techSkills = config.skills.map(skill => ({
       children: (
          <div className="flex items-center gap-2"> 
