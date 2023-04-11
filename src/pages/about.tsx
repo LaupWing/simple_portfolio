@@ -25,7 +25,7 @@ const AboutPage = () => {
                      Hello, I’m Loc, a product Designer With 7 years of
                      experience.
                   </h1>
-                  <p className="mt-10">
+                  <p className="mt-10 flex-1">
                      I care a lot about using design for positive impact.
                      and enjoy creating user-centric, delightful, and
                      human experiences.
