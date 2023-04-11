@@ -49,10 +49,22 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   ))}
                </Carousel>
             </motion.div>
-            <ProjectInfo 
-               currentImage={currentImage}
-               project={project}
-            />
+            <motion.div
+               initial={{
+                  opacity: 0
+               }}
+               animate={{
+                  opacity: 1,
+                  transition: {
+                     delay: 0.3
+                  }
+               }}
+            >
+               <ProjectInfo 
+                  currentImage={currentImage}
+                  project={project}
+               />
+            </motion.div>
          </header>
          <div className="w-full p-6 bg-slate-100 border-2 border-slate-200 rounded-2xl shadow">
             <BlockContent value={project.content} />
