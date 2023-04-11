@@ -23,15 +23,6 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
       ? Object.keys(router.query) as SkillsPartial 
       : []
    )
-
-   const toggleSkill = (skill: SkillsType[number]) => {
-      if(activeSkills.includes(skill)){
-         setActiveSkills((prev) => prev.filter(x => x !== skill))
-      }else {
-         setActiveSkills((prev) => [...prev, skill])
-      }
-   }
-   
    useEffect(() => {
       const query:Partial<Record<SkillsType[number], boolean>> = {}
       activeSkills.forEach(_skill => {
@@ -43,6 +34,14 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
    }, [activeSkills])
 
    const isAllActive = config.skills.every(x  => (Object.keys(router.query) as SkillsPartial).includes(x))
+
+   const toggleSkill = (skill: SkillsType[number]) => {
+      if(activeSkills.includes(skill)){
+         setActiveSkills((prev) => prev.filter(x => x !== skill))
+      }else {
+         setActiveSkills((prev) => [...prev, skill])
+      }
+   }
 
    const toggle = () => {
       if(isAllActive){
