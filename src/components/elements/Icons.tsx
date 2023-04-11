@@ -25,6 +25,7 @@ import {
    SiTypescript 
 } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
+import { IoIosSend } from "react-icons/io"
 
 
 export const IconInstagram:IconType = (props) => {
@@ -97,4 +98,8 @@ export const IconNextjs:IconType = (props) => {
 
 export const IconExternal:IconType = (props) => {
    return <HiOutlineExternalLink {...props} />
+}
+
+export const IconSend:IconType = (props) => {
+   return <IoIosSend {...props} />
 }
