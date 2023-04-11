@@ -14,7 +14,8 @@ import { GrGatsbyjs } from "react-icons/gr"
 import { 
    IoLogoLaravel, 
    IoLogoReact, 
-   IoLogoVue 
+   IoLogoVue, 
+   IoMail
 } from "react-icons/io5"
 import { HiOutlineExternalLink } from "react-icons/hi"
 import { 
@@ -102,4 +103,8 @@ export const IconExternal:IconType = (props) => {
 
 export const IconSend:IconType = (props) => {
    return <IoIosSend {...props} />
+}
+
+export const IconMail:IconType = (props) => {
+   return <IoMail {...props} />
 }
