@@ -199,6 +199,22 @@ const TechSkills = () => {
       ),
       progress: techSkillsProgress[skill]
    }))
+   const container = {
+      hidden: {
+         opacity: 0
+      },
+      show: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.2,
+            delayChildren: 3,
+         },
+      },
+   }
+   const item = {
+      hidden: { opacity: 0, y: "100%" },
+      show: { opacity: 1, y: 0 },
+   }
 
    return (
       <motion.div 
@@ -217,16 +233,25 @@ const TechSkills = () => {
       >
          <h3 className="uppercase text-sm font-bold text-slate-500">Coding skills</h3>
          <p className="uppercase text-xs font-bold text-slate-400 mt-1">These are all coding where I am either working on or are very familiar with.</p>
-         <div className="flex flex-col gap-y-4 text-xs mt-4">
+         <motion.div 
+            className="flex flex-col gap-y-4 text-xs mt-4"
+            variants={container}
+            initial="hidden"
+            animate="show"
+         >
             {techSkills.map((ts, index) => (
-               <SkillLevel 
-                  children={ts.children}
-                  key={index}
-                  progress={ts.progress}
-                  color="emerald"
-               />
+               <motion.div
+                  variants={item}
+               >
+                  <SkillLevel 
+                     children={ts.children}
+                     key={index}
+                     progress={ts.progress}
+                     color="emerald"
+                  />
+               </motion.div>
             ))}
-         </div>
+         </motion.div>
       </motion.div>
    )
 }
