@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
 import { ProjectCard } from "~/components/cards"
+import toast from "react-hot-toast"
 
 interface ProjectPageProps {
    projects: ProjectType[]
@@ -42,9 +43,18 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
    }, [activeSkills])
 
    const isAllActive = config.skills.every(x  => (Object.keys(router.query) as SkillsPartial).includes(x))
+
    const toggle = () => {
       if(isAllActive){
          setActiveSkills([])
+         toast("Hello Darkness", {
+            icon: "👏",
+            style: {
+               borderRadius: "10px",
+               background: "white",
+               color: "#ff"
+            }
+         })
       }else {
          setActiveSkills(config.skills)
       }
