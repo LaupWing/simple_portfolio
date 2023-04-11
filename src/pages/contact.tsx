@@ -9,6 +9,7 @@ import {
    IconSend, 
    IconTwitter 
 } from "~/components/elements"
+import axios from "axios"
 
 interface FormData {
    email: string
@@ -18,7 +19,14 @@ interface FormData {
 
 const ContactPage = () => {
    const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
-   const onSubmit: SubmitHandler<FormData> = data => console.log(data)
+   const onSubmit: SubmitHandler<FormData> = async data => {
+      try {
+         const response = await axios.post('/api/contact', data);
+         console.log(response.data)
+       } catch (error) {
+         console.error(error)
+       }
+   }
    
    return (
       <section className="grid grid-cols-2 gap-6 overflow-hidden">
