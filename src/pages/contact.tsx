@@ -1,9 +1,23 @@
+import type { SubmitHandler } from "react-hook-form"
 import { useForm } from "react-hook-form"
-import { IconDribbble, IconInstagram, IconLinkedIn, IconMail, IconSend, IconTwitter } from "~/components/elements"
+import { 
+   IconDribbble, 
+   IconInstagram, 
+   IconLinkedIn, 
+   IconMail, 
+   IconSend, 
+   IconTwitter 
+} from "~/components/elements"
+
+interface FormData {
+   email: string
+   name: string
+   message: string
+}
 
 const ContactPage = () => {
-   const { register, handleSubmit, formState: { errors } } = useForm()
-   const onSubmit = data => console.log(data)
+   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+   const onSubmit: SubmitHandler<FormData> = data => console.log(data)
    
    return (
       <section className="grid grid-cols-2 gap-6">
