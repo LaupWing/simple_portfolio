@@ -24,21 +24,31 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
             Back
          </button>
          <header className="w-full grid grid-cols-2 gap-6 ">
-            <Carousel 
-               className="aspect-square rounded-2xl overflow-hidden flex" 
-               showThumbs={false}
-               showStatus={false}
-               onChange={changedItem}
+            <motion.div
+               className="aspect-square rounded-2xl overflow-hidden flex"
+               initial={{
+                  x: "-100%"
+               }}
+               animate={{
+                  x: 0
+               }}
             >
-               {project.images.map(image => (
-                  <img 
-                     className="flex-1 h-full w-full object-cover" 
-                     src={urlFor(image).url()} 
-                     alt="" 
-                     key={image._key}
-                  />
-               ))}
-            </Carousel>
+               <Carousel 
+                  className="" 
+                  showThumbs={false}
+                  showStatus={false}
+                  onChange={changedItem}
+               >
+                  {project.images.map(image => (
+                     <img 
+                        className="flex-1 h-full w-full object-cover" 
+                        src={urlFor(image).url()} 
+                        alt="" 
+                        key={image._key}
+                     />
+                  ))}
+               </Carousel>
+            </motion.div>
             <div className="aspect-square shadow relative rounded-2xl overflow-hidden">
                <AnimatePresence>
                   <motion.img
