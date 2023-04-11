@@ -56,7 +56,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                animate={{
                   opacity: 1,
                   transition: {
-                     delay: 0.3
+                     delay: 0.4
                   }
                }}
             >
@@ -66,9 +66,22 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                />
             </motion.div>
          </header>
-         <div className="w-full p-6 bg-slate-100 border-2 border-slate-200 rounded-2xl shadow">
+         <motion.div 
+            className="w-full p-6 bg-slate-100 border-2 border-slate-200 rounded-2xl shadow"
+            initial={{
+               opacity: 0,
+               y: "50%"
+            }}
+            animate={{
+               opacity: 1,
+               y: 0,
+               transition: {
+                  delay: 0.7
+               }
+            }}
+         >
             <BlockContent value={project.content} />
-         </div>
+         </motion.div>
       </>
    )
 }
