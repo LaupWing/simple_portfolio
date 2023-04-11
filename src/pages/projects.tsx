@@ -14,6 +14,14 @@ interface ProjectPageProps {
    projects: ProjectType[]
 }
 
+const toastStyles = {
+   borderRadius: "5px",
+   background: "#c7d2fe",
+   color: "#1e1b4b",
+   borderColor: "#a5b4fc",
+   borderWidth: "2px"
+}
+
 const ProjectsPage:NextPage<ProjectPageProps> = ({
    projects
 }) => {
@@ -38,23 +46,42 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
    const toggleSkill = (skill: SkillsType[number]) => {
       if(activeSkills.includes(skill)){
          setActiveSkills((prev) => prev.filter(x => x !== skill))
+         toast((
+            <div className="flex items-center">
+               <Skill skill={skill}/>
+               filtered out {skill}
+            </div>
+         ), {
+            icon: "🗑️",
+            style: toastStyles
+         })
+         setActiveSkills([])
       }else {
+         toast((
+            <div className="flex items-center">
+               <Skill skill={skill}/>
+               added skill {skill}
+            </div>
+         ), {
+            icon: "👏",
+            style: toastStyles
+         })
          setActiveSkills((prev) => [...prev, skill])
       }
    }
 
    const toggle = () => {
       if(isAllActive){
-         setActiveSkills([])
-         toast("Hello Darkness", {
-            icon: "👏",
-            style: {
-               borderRadius: "10px",
-               background: "white",
-               color: "#ff"
-            }
+         toast("Removed all the filters", {
+            icon: "🗑️",
+            style: toastStyles
          })
+         setActiveSkills([])
       }else {
+         toast("Added all the filters", {
+            icon: "👏",
+            style: toastStyles
+         })
          setActiveSkills(config.skills)
       }
    }
