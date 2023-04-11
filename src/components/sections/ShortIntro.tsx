@@ -1,14 +1,9 @@
 import { FC } from "react"
 import { 
-   IconDribbble, 
-   IconGithub, 
-   IconInstagram, 
-   IconLinkedIn,
    Social,
 } from "~/components/elements"
 import { motion } from "framer-motion"
 import { SocialType } from "typings"
-import { IconType } from "react-icons"
 
 export const ShortIntro:FC = () => {
    const socials: SocialType[] = [
