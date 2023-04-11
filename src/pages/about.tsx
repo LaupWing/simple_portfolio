@@ -1,7 +1,5 @@
 import { SocialType } from "typings"
-import { FC } from "react"
-import { IconDribbble, IconGithub, IconInstagram, IconLinkedIn, Social } from "~/components/elements"
-import { IconType } from "react-icons"
+import { Social } from "~/components/elements"
 
 const AboutPage = () => {
    const socials: SocialType[] = [
