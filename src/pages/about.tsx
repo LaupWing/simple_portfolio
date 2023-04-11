@@ -78,7 +78,20 @@ const AboutPage = () => {
                   opacity: 1
                }}
             />
-            <motion.div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
+            <motion.div 
+               className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10"
+               initial={{
+                  x: "100%",
+                  opacity: 0,
+               }}
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition:{
+                     delay: 0.4
+                  }
+               }}
+            >
                <div className="flex flex-col flex-1">
                   <h1 className="text-3xl leading-normal">
                      Hello, I’m Loc, a product Designer With 7 years of
