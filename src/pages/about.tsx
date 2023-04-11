@@ -36,7 +36,15 @@ const AboutPage = () => {
       },
    ]
    const techSkills = config.skills.map(skill => ({
-      children: <> <Skill skill={skill}/> {skill} </>,
+      children: (
+         <div className="flex items-center gap-2"> 
+            <Skill 
+               size={16} 
+               skill={skill}
+            /> 
+            {skill} 
+         </div>
+      ),
       progress: 20
    }))
 
