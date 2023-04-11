@@ -8,6 +8,32 @@ const AboutPage = () => {
       "dribble",
       "instagram",
    ]
+   const generalSkills = [
+      {
+         children: "communication",
+         progress: 90
+      },
+      {
+         children: "coding",
+         progress: 85
+      },
+      {
+         children: "consistency",
+         progress: 95
+      },
+      {
+         children: "dutch",
+         progress: 85
+      },
+      {
+         children: "english",
+         progress: 65
+      },
+      {
+         children: "fitness",
+         progress: 95
+      },
+   ]
 
    return (
       <>
