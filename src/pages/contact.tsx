@@ -1,5 +1,6 @@
 import type { SubmitHandler } from "react-hook-form"
 import { useForm } from "react-hook-form"
+import { motion } from "framer-motion"
 import { 
    IconDribbble, 
    IconInstagram, 
@@ -20,8 +21,16 @@ const ContactPage = () => {
    const onSubmit: SubmitHandler<FormData> = data => console.log(data)
    
    return (
-      <section className="grid grid-cols-2 gap-6">
-         <section className="p-8 border-2 border-slate-200 col-span-2 rounded-2xl bg-slate-100">
+      <section className="grid grid-cols-2 gap-6 overflow-hidden">
+         <motion.section 
+            className="p-8 border-2 border-slate-200 col-span-2 rounded-2xl bg-slate-100"
+            initial={{
+               y: "-100%"
+            }}
+            animate={{
+               y: 0
+            }}
+         >
             <h2 className="text-2xl font-bold text-slate-600">Love to hear from you,</h2>
             <h2 className="text-2xl font-bold text-slate-600">Get in touch <span className="text-3xl">👋</span></h2>
             <form 
@@ -96,9 +105,20 @@ const ContactPage = () => {
                   <IconSend className="ml-1" size={14} />
                </button>
             </form>
-         </section>
+         </motion.section>
 
-         <section className="col-span-1 p-6 border-2 border-slate-200 rounded-2xl bg-slate-100">
+         <motion.section 
+            className="col-span-1 p-6 border-2 border-slate-200 rounded-2xl bg-slate-100"
+            initial={{
+               y: "100%"
+            }}
+            animate={{
+               y: 0,
+               transition: {
+                  delay: 0.4
+               }
+            }}
+         >
             <ul className="text-slate-500 gap-y-4 flex flex-col">
                <li className="flex items-center gap-2"><IconMail size={20} /> laupwing@gmail.com</li>
                <li className="flex items-center gap-2"><IconDribbble size={20} /> @laupwing</li>
@@ -106,7 +126,7 @@ const ContactPage = () => {
                <li className="flex items-center gap-2"><IconLinkedIn size={20} /> @laupwing</li>
                <li className="flex items-center gap-2"><IconTwitter size={20} /> @laupwing</li>
             </ul>
-         </section>
+         </motion.section>
       </section>
 
    )
