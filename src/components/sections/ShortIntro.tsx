@@ -4,6 +4,7 @@ import {
    IconGithub, 
    IconInstagram, 
    IconLinkedIn,
+   Social,
 } from "~/components/elements"
 import { motion } from "framer-motion"
 import { SocialType } from "typings"
@@ -48,11 +49,16 @@ export const ShortIntro:FC = () => {
                   </button>
                   <div className="space-x-4 flex">
                      {socials.map((social) => (
-                        <Social
-                           key={social}
-                           name={social}
-                           url=""
-                        />
+                        <motion.div
+                           whileHover={{
+                              scale: 0.9,
+                           }}
+                        >
+                           <Social
+                              key={social}
+                              name={social}
+                           />
+                        </motion.div>
                      ))}
                   </div>
                </div>
@@ -83,33 +89,33 @@ export const ShortIntro:FC = () => {
 }
 
 
-interface SocialProps {
-   name: SocialType
-   url: string
-}
+// interface SocialProps {
+//    name: SocialType
+//    url: string
+// }
 
-const Social:FC<SocialProps> = ({
-   name,
-   // url
-}) => {
-   const socials:Record<SocialType, any> = {
-      instagram: IconInstagram,
-      linkedin: IconLinkedIn,
-      dribble: IconDribbble,
-      github: IconGithub
-   }
-   const IconComponent:IconType = socials[name]
+// const Social:FC<SocialProps> = ({
+//    name,
+//    // url
+// }) => {
+//    const socials:Record<SocialType, any> = {
+//       instagram: IconInstagram,
+//       linkedin: IconLinkedIn,
+//       dribble: IconDribbble,
+//       github: IconGithub
+//    }
+//    const IconComponent:IconType = socials[name]
 
-   return (
-      <motion.div 
-         className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center hover:text-indigo-500 cursor-pointer duration-200"
-         whileHover={{
-            scale: 0.9,
-         }}
-      >
-         <IconComponent 
-            size={24}
-         />
-      </motion.div>
-   )
-}
+//    return (
+//       <motion.div 
+//          className="w-12 h-12 bg-white rounded-full text-neutral-900 flex items-center justify-center hover:text-indigo-500 cursor-pointer duration-200"
+//          whileHover={{
+//             scale: 0.9,
+//          }}
+//       >
+//          <IconComponent 
+//             size={24}
+//          />
+//       </motion.div>
+//    )
+// }
