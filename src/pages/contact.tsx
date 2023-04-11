@@ -43,6 +43,7 @@ const ContactPage = () => {
                   
                </textarea>
             </div>
+            <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider">Lets connect!</button>
          </form>
       </section>
    )
