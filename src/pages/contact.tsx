@@ -32,11 +32,16 @@ const ContactPage = () => {
                   <label 
                      htmlFor="name"
                      className="text-sm mb-1 font-bold tracking-wider text-slate-400"
-                  >Your name</label>
+                  >
+                     Your name
+                  </label>
                   <input 
                      id="name" 
                      className="p-1 rounded flex-1 border-slate-300" 
-                     type="text" 
+                     type="text"
+                     {...register("name", {
+                        required: "You need to fill in your name!"
+                     })}
                   />
                </div>
                <div className="flex flex-col">
@@ -50,6 +55,9 @@ const ContactPage = () => {
                      id="email"
                      className="p-1 focus:border-indigo-500 rounded border-slate-300" 
                      type="email" 
+                     {...register("email", {
+                        required: "You need to fill in your email!"
+                     })}
                   />
                </div>
                <div className="flex flex-col col-span-2">
