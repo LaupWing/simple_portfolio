@@ -117,6 +117,23 @@ const GeneralSkills = () => {
          progress: 95
       },
    ]
+   const container = {
+      hidden: {
+         opacity: 0
+      },
+      show: {
+         opacity: 1,
+         transition: {
+            staggerChildren: 0.2,
+            delayChildren: 2,
+         },
+      },
+   }
+   const item = {
+      hidden: { opacity: 0, y: "100%" },
+      show: { opacity: 1, y: 0 },
+   }
+
    return (
       <motion.div 
          className="flex-1 border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl"
@@ -133,23 +150,32 @@ const GeneralSkills = () => {
          }}
       >
          <h3 className="uppercase text-sm font-bold text-slate-500">General skills</h3>
-         <div className="flex flex-col gap-y-4 text-xs mt-4">
+         <motion.div 
+            className="flex flex-col gap-y-4 text-xs mt-4"
+            variants={container}
+            initial="hidden"
+            animate="show"
+         >
             {generalSkills.map((gs, index) => (
-               <SkillLevel
-                  progress={gs.progress}
-                  key={index}
+               <motion.div
+                  variants={item}
                >
-                  {gs.children}
-               </SkillLevel>
+                  <SkillLevel
+                     progress={gs.progress}
+                     key={index}
+                  >
+                     {gs.children}
+                  </SkillLevel>
+               </motion.div>
             ))}
-         </div>
+         </motion.div>
       </motion.div>
    )
 }
 
 const TechSkills = () => {
    const techSkillsProgress:Record<SkillsType[number], number> = {
-      firebase: 90,
+      firebase: 95,
       gatsby: 70,
       laravel: 40,
       nextjs: 80,
