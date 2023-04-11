@@ -1,5 +1,5 @@
 import { SocialType } from "typings"
-import { Social } from "~/components/elements"
+import { SkillLevel, Social } from "~/components/elements"
 
 const AboutPage = () => {
    const socials: SocialType[] = [
@@ -74,42 +74,14 @@ const AboutPage = () => {
                <div className="flex-1 border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl">
                   <h3 className="uppercase text-sm font-bold text-slate-500">General skills</h3>
                   <div className="flex flex-col gap-y-4 text-xs mt-4">
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400 w-32">Communcation</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[80%]"/>
-                        </div>
-                     </div>
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400  w-32">Coding</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
-                        </div>
-                     </div>
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400  w-32">Consistency</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
-                        </div>
-                     </div>
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400  w-32">Dutch</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
-                        </div>
-                     </div>
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400  w-32">English</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
-                        </div>
-                     </div>
-                     <div className="flex items-center">
-                        <span className="font-bold uppercase text-slate-400  w-32">Fitness</span>
-                        <div className="flex-1 border-2 p-0.5 border-indigo-500 rounded-full">
-                           <div className="h-1.5 bg-indigo-500 rounded-full w-[90%]"/>
-                        </div>
-                     </div>
+                     {generalSkills.map((gs, index) => (
+                        <SkillLevel
+                           progress={gs.progress}
+                           key={index}
+                        >
+                           {gs.children}
+                        </SkillLevel>
+                     ))}
                   </div>
                </div>
             </div>
