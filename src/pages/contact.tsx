@@ -1,12 +1,19 @@
+import { useForm } from "react-hook-form"
 import { IconDribbble, IconInstagram, IconLinkedIn, IconMail, IconSend, IconTwitter } from "~/components/elements"
 
 const ContactPage = () => {
+   const { register, handleSubmit, formState: { errors } } = useForm()
+   const onSubmit = data => console.log(data)
+   
    return (
       <section className="grid grid-cols-2 gap-6">
          <section className="p-8 border-2 border-slate-200 col-span-2 rounded-2xl bg-slate-100">
             <h2 className="text-2xl font-bold text-slate-600">Love to hear from you,</h2>
             <h2 className="text-2xl font-bold text-slate-600">Get in touch <span className="text-3xl">👋</span></h2>
-            <form className="grid grid-cols-2 gap-6 mt-8" action="">
+            <form 
+               className="grid grid-cols-2 gap-6 mt-8"
+               onSubmit={handleSubmit(onSubmit)}
+            >
                <div className="flex flex-col">
                   <label 
                      htmlFor="name"
