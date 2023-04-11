@@ -58,7 +58,7 @@ const AboutPage = () => {
             {skill} 
          </div>
       ),
-      progress: 20
+      progress: techSkillsProgress[skill]
    }))
 
    return (
