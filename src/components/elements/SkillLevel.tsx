@@ -16,8 +16,8 @@ export const SkillLevel:FC<{
          bg: "bg-indigo-500"
       },
       emerald: {
-         border: "border-indigo-500",
-         bg: "bg-indigo-500"
+         border: "border-emerald-500",
+         bg: "bg-emerald-500"
       },
    }
 

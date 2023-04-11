@@ -1,5 +1,6 @@
 import { SocialType } from "typings"
-import { SkillLevel, Social } from "~/components/elements"
+import { Skill, SkillLevel, Social } from "~/components/elements"
+import config from "~/config"
 
 const AboutPage = () => {
    const socials: SocialType[] = [
@@ -34,6 +35,10 @@ const AboutPage = () => {
          progress: 95
       },
    ]
+   const techSkills = config.skills.map(skill => ({
+      children: <> <Skill skill={skill}/> {skill} </>,
+      progress: 20
+   }))
 
    return (
       <>
@@ -89,18 +94,14 @@ const AboutPage = () => {
                <h3 className="uppercase text-sm font-bold text-slate-500">Coding skills</h3>
                <p className="uppercase text-xs font-bold text-slate-400 mt-1">These are all coding where I am either working on or are very familiar with.</p>
                <div className="flex flex-col gap-y-4 text-xs mt-4">
-                  <div className="flex items-center">
-                     <span className="font-bold uppercase text-slate-400 w-32">Vue</span>
-                     <div className="flex-1 border-2 p-0.5 border-emerald-500 rounded-full">
-                        <div className="h-1.5 bg-emerald-500 rounded-full w-[80%]"/>
-                     </div>
-                  </div>
-                  <div className="flex items-center">
-                     <span className="font-bold uppercase text-slate-400 w-32">React</span>
-                     <div className="flex-1 border-2 p-0.5 border-emerald-500 rounded-full">
-                        <div className="h-1.5 bg-emerald-500 rounded-full w-[80%]"/>
-                     </div>
-                  </div>
+                  {techSkills.map((ts, index) => (
+                     <SkillLevel 
+                        children={ts.children}
+                        key={index}
+                        progress={ts.progress}
+                        color="emerald"
+                     />
+                  ))}
                </div>
             </div>
          </section>
