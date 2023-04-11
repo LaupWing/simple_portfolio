@@ -1,6 +1,7 @@
 import { SkillsType, SocialType } from "typings"
 import { Skill, SkillLevel, Social } from "~/components/elements"
 import config from "~/config"
+import { motion } from "framer-motion"
 
 const AboutPage = () => {
    const socials: SocialType[] = [
@@ -64,12 +65,20 @@ const AboutPage = () => {
    return (
       <>
          <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
-            <img
+            <motion.img
                className="col-span-1 object-cover aspect-[4/6] rounded-2xl"
                src="images/profile.jpg"
                alt="profile image"
+               initial={{
+                  x: "-100%",
+                  opacity: 0,
+               }}
+               animate={{
+                  x: 0,
+                  opacity: 1
+               }}
             />
-            <div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
+            <motion.div className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10">
                <div className="flex flex-col flex-1">
                   <h1 className="text-3xl leading-normal">
                      Hello, I’m Loc, a product Designer With 7 years of
@@ -87,7 +96,7 @@ const AboutPage = () => {
                   src="images/profile.jpg"
                   alt="profile image"
                />
-            </div>
+            </motion.div>
             <div className="col-span-3 flex gap-6">
                <div className="space-y-4 flex p-4 rounded-2xl flex-col bg-slate-200 border-slate-300 border-2">
                   {socials.map((social) => (
