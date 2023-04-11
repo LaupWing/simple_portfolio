@@ -1,4 +1,4 @@
-import { IconSend } from "~/components/elements"
+import { IconDribbble, IconInstagram, IconLinkedIn, IconMail, IconSend, IconTwitter } from "~/components/elements"
 
 const ContactPage = () => {
    return (
@@ -53,8 +53,14 @@ const ContactPage = () => {
             </form>
          </section>
 
-         <section className="col-span-1 p-8 border-2 border-slate-200 rounded-2xl bg-slate-100">
-
+         <section className="col-span-1 p-6 border-2 border-slate-200 rounded-2xl bg-slate-100">
+            <ul className="text-slate-500 gap-y-4 flex flex-col">
+               <li className="flex items-center gap-2"><IconMail size={20} /> laupwing@gmail.com</li>
+               <li className="flex items-center gap-2"><IconDribbble size={20} /> @laupwing</li>
+               <li className="flex items-center gap-2"><IconInstagram size={20} /> @laupwing</li>
+               <li className="flex items-center gap-2"><IconLinkedIn size={20} /> @laupwing</li>
+               <li className="flex items-center gap-2"><IconTwitter size={20} /> @laupwing</li>
+            </ul>
          </section>
       </section>
 
