@@ -43,6 +43,11 @@ const ContactPage = () => {
                         required: "You need to fill in your name!"
                      })}
                   />
+                  {errors.name && (
+                     <p className="text-red-400 uppercase text-xs font-bold mt-1">
+                        { errors.name.message }
+                     </p>
+                  )}
                </div>
                <div className="flex flex-col">
                   <label 
@@ -59,6 +64,11 @@ const ContactPage = () => {
                         required: "You need to fill in your email!"
                      })}
                   />
+                  {errors.email && (
+                     <p className="text-red-400 uppercase text-xs font-bold mt-1">
+                        { errors.email.message }
+                     </p>
+                  )}
                </div>
                <div className="flex flex-col col-span-2">
                   <label 
@@ -68,12 +78,18 @@ const ContactPage = () => {
                      Message
                   </label>
                   <textarea 
-                     name="message" 
                      id="message" 
                      className="resize-none h-36 rounded border-slate-300"
+                     {...register("message", {
+                        required: "Message is required :)"
+                     })}  
                   >
-                     
                   </textarea>
+                  {errors.message && (
+                     <p className="text-red-400 uppercase text-xs font-bold mt-1">
+                        { errors.message.message }
+                     </p>
+                  )}
                </div>
                <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider flex items-center justify-center">
                   Lets connect!
