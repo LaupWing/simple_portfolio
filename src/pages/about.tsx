@@ -111,14 +111,27 @@ const AboutPage = () => {
                />
             </motion.div>
             <div className="col-span-3 flex gap-6">
-               <div className="space-y-4 flex p-4 rounded-2xl flex-col bg-slate-200 border-slate-300 border-2">
+               <motion.div 
+                  className="space-y-4 flex p-4 rounded-2xl flex-col bg-slate-200 border-slate-300 border-2"
+                  initial={{
+                     x: "-100%",
+                     opacity: 0,
+                  }}
+                  animate={{
+                     x: 0,
+                     opacity: 1,
+                     transition:{
+                        delay: 0.8
+                     }
+                  }}
+               >
                   {socials.map((social) => (
                      <Social
                         key={social}
                         name={social}
                      />
                   ))}
-               </div>
+               </motion.div>
                <div className="flex-1 border-2 p-4 border-slate-300 bg-slate-200 rounded-2xl">
                   <h3 className="uppercase text-sm font-bold text-slate-500">General skills</h3>
                   <div className="flex flex-col gap-y-4 text-xs mt-4">
