@@ -53,7 +53,7 @@ const ContactPage = () => {
             </form>
          </section>
 
-         <section className="col-span-1">
+         <section className="col-span-1 p-8 border-2 border-slate-200 rounded-2xl bg-slate-100">
 
          </section>
       </section>
