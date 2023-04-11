@@ -48,19 +48,18 @@ const ProjectsPage:NextPage<ProjectPageProps> = ({
          setActiveSkills((prev) => prev.filter(x => x !== skill))
          toast((
             <div className="flex items-center">
-               <Skill skill={skill}/>
                filtered out {skill}
+               <Skill className="ml-1" skill={skill}/>
             </div>
          ), {
             icon: "🗑️",
             style: toastStyles
          })
-         setActiveSkills([])
       }else {
          toast((
             <div className="flex items-center">
-               <Skill skill={skill}/>
                added skill {skill}
+               <Skill className="ml-1" skill={skill}/>
             </div>
          ), {
             icon: "👏",
