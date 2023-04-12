@@ -12,6 +12,7 @@ import {
 } from "react-icons/bs"
 import { GrGatsbyjs } from "react-icons/gr"
 import { 
+   IoClose,
    IoLogoLaravel, 
    IoLogoReact, 
    IoLogoVue, 
@@ -28,6 +29,10 @@ import {
 import { TbBrandNextjs } from "react-icons/tb"
 import { IoIosSend } from "react-icons/io"
 
+
+export const IconClose:IconType = (props) => {
+   return <IoClose {...props}/>
+} 
 
 export const IconInstagram:IconType = (props) => {
    return <AiFillInstagram {...props}/>
