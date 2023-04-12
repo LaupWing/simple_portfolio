@@ -7,6 +7,7 @@ import { setInitialMenuLoaded } from "~/slices/siteSettings"
 import { SkillsType } from "typings"
 import config from "~/config"
 import { IconMenu } from "../elements"
+import { MobileSideNav } from "./MobileSideNav"
  
 export const MainNav = () => {
    const links = [
@@ -50,62 +51,65 @@ export const MainNav = () => {
    }
 
    return (
-      <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
-         <motion.div
-            className="md:hidden"
-            animate={{
-               x: 0,
-               opacity: 1,
-               transition: {
-                  duration: 0.3
-               }
-            }}
-            initial={{
-               x: -100,
-               opacity: 0
-            }}
-         >
-            <IconMenu 
-               className="mr-4 text-slate-700"
-               size={24} 
-            />
-         </motion.div>
-         <motion.div 
-            className="flex items-center space-x-1"
-            animate={{
-               x: 0,
-               opacity: 1,
-               transition: {
-                  delay: 0.3
-               }
-            }}
-            initial={{
-               x: 100,
-               opacity: 0
-            }}
-         >
-            <div className="w-5 h-5 bg-indigo-500 rounded-full" />
-            <h1 className="uppercase font-bold">Laup</h1>
-         </motion.div>
-         <nav className="text-neutral-800">
-            <motion.ul
-               className="space-x-10 hidden md:flex"
-               variants={container}
-               animate="show"
-               initial="hidden"
+      <>
+         <MobileSideNav />
+         <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
+            <motion.div
+               className="md:hidden"
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                     duration: 0.3
+                  }
+               }}
+               initial={{
+                  x: -100,
+                  opacity: 0
+               }}
             >
-               {links.map((link, i) => (
-                  <NavLink
-                     key={i}
-                     href={link.href}
-                     text={link.text}
-                     isLast={i === (links.length - 1)}
-                     query={link.query}
-                  />
-               ))}
-            </motion.ul>
-         </nav>
-      </header>
+               <IconMenu 
+                  className="mr-4 text-slate-700"
+                  size={24} 
+               />
+            </motion.div>
+            <motion.div 
+               className="flex items-center space-x-1"
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                     delay: 0.3
+                  }
+               }}
+               initial={{
+                  x: 100,
+                  opacity: 0
+               }}
+            >
+               <div className="w-5 h-5 bg-indigo-500 rounded-full" />
+               <h1 className="uppercase font-bold">Laup</h1>
+            </motion.div>
+            <nav className="text-neutral-800">
+               <motion.ul
+                  className="space-x-10 hidden md:flex"
+                  variants={container}
+                  animate="show"
+                  initial="hidden"
+               >
+                  {links.map((link, i) => (
+                     <NavLink
+                        key={i}
+                        href={link.href}
+                        text={link.text}
+                        isLast={i === (links.length - 1)}
+                        query={link.query}
+                     />
+                  ))}
+               </motion.ul>
+            </nav>
+         </header>
+      </>
    )
 }
 
