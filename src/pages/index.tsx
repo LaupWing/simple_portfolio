@@ -92,7 +92,7 @@ const ShortIntro:FC = () => {
                   and enjoy creating user-centric, delightful, and
                   human experiences.
                </p>
-               <div className="flex flex-col space-y-4 mt-4 md:mt-auto md:flex-row md:space-x-10">
+               <div className="flex flex-col space-y-4 mt-4 md:space-y-0 md:mt-auto md:flex-row md:space-x-10">
                   <button className="px-9 py-1 mr-auto rounded-full bg-neutral-900 text-white">
                      Contact me
                   </button>
