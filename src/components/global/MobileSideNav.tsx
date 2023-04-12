@@ -79,7 +79,6 @@ export const MobileSideNav:FC<{
                      key={i}
                      href={link.href}
                      text={link.text}
-                     isLast={i === (links.length - 1)}
                      query={link.query}
                   />
                ))}
@@ -92,13 +91,11 @@ export const MobileSideNav:FC<{
 interface NavLinkProps {
    href: string
    text: string
-   isLast: boolean
    query?: Partial<Record<SkillsType[number], boolean>>
 }
 const NavLink:FC<NavLinkProps> = ({
    href,
    text,
-   isLast,
    query = {}
 }) => {
    const router = useRouter()
