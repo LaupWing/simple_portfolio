@@ -15,7 +15,7 @@ const AboutPage = () => {
       <>
          <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
             <motion.img
-               className="col-span-1 object-cover aspect-[4/6] rounded-2xl"
+               className="md:col-span-1 col-span-3 object-cover md:aspect-[4/6] aspect-[4/4] rounded-2xl md:object-center object-top"
                src="images/profile.jpg"
                alt="profile image"
                initial={{
@@ -28,7 +28,7 @@ const AboutPage = () => {
                }}
             />
             <motion.div 
-               className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10"
+               className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-3 md:col-span-2 overflow-hidden p-10"
                initial={{
                   x: "100%",
                   opacity: 0,
@@ -59,9 +59,9 @@ const AboutPage = () => {
                   alt="profile image"
                />
             </motion.div>
-            <div className="col-span-3 flex gap-6">
+            <div className="col-span-3 flex flex-col md:flex-row gap-6">
                <motion.div 
-                  className="space-y-4 flex p-4 rounded-2xl flex-col bg-slate-200 border-slate-300 border-2"
+                  className="md:space-y-4 flex p-4 rounded-2xl md:flex-col flex-row bg-slate-200 border-slate-300 border-2 justify-evenly"
                   initial={{
                      x: "-100%",
                      opacity: 0,
