@@ -17,7 +17,7 @@ import {
    IoLogoVue, 
    IoMail
 } from "react-icons/io5"
-import { HiOutlineExternalLink } from "react-icons/hi"
+import { HiMenuAlt2, HiOutlineExternalLink } from "react-icons/hi"
 import { 
    SiFirebase, 
    SiShopify, 
@@ -107,4 +107,8 @@ export const IconSend:IconType = (props) => {
 
 export const IconMail:IconType = (props) => {
    return <IoMail {...props} />
+}
+
+export const IconMenu:IconType = (props) => {
+   return <HiMenuAlt2 {...props} />
 }
