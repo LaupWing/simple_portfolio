@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { FC } from "react"
+import { FC, useState } from "react"
 import { motion } from "framer-motion"
 import { useAppDispatch } from "~/app/hooks"
 import { setInitialMenuLoaded } from "~/slices/siteSettings"
@@ -17,6 +17,7 @@ export const MainNav:FC<{
 }> = ({
    links
 }) => {
+   const [showSideNav, setShowSideNav] = useState(false)
    const container = {
       hidden: { 
          opacity: 0
@@ -32,10 +33,11 @@ export const MainNav:FC<{
 
    return (
       <>
-         <MobileSideNav 
+
+         {showSideNav && <MobileSideNav 
             links={links}
-         />
-         <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
+         />}
+         <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl sticky top-0 bg-white z-[100]">
             <motion.div
                className="md:hidden"
                animate={{
