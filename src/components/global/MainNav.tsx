@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { FC, useState } from "react"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { useAppDispatch } from "~/app/hooks"
 import { setInitialMenuLoaded } from "~/slices/siteSettings"
 import { SkillsType } from "typings"
@@ -33,10 +33,26 @@ export const MainNav:FC<{
 
    return (
       <>
-
-         {showSideNav && <MobileSideNav 
-            links={links}
-         />}
+         <AnimatePresence>
+            {showSideNav && (
+               <motion.div
+                  initial={{ 
+                     x: "-100%" 
+                  }}
+                  animate={{ 
+                     x: 0 
+                  }}
+                  exit={{ 
+                     x: "-100%" 
+                  }}
+                  className="z-[500] fixed inset-0"
+               >
+                  <MobileSideNav 
+                     links={links}
+                  />
+               </motion.div>
+            )}
+         </AnimatePresence>
          <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl sticky top-0 bg-white z-[100]">
             <motion.div
                className="md:hidden"
@@ -51,6 +67,7 @@ export const MainNav:FC<{
                   x: -100,
                   opacity: 0
                }}
+               onClick={() => setShowSideNav(true)}
             >
                <IconMenu 
                   className="mr-4 text-slate-700"

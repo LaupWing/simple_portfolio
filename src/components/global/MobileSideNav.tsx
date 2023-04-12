@@ -2,7 +2,6 @@ import { FC } from "react"
 import { useRouter } from "next/router"
 import { IconClose } from "../elements"
 import { SkillsType } from "typings"
-import { motion } from "framer-motion"
 import Link from "next/link"
 
 export const MobileSideNav:FC<{
@@ -15,7 +14,7 @@ export const MobileSideNav:FC<{
    links
 }) => {
    return (
-      <div className="fixed inset-0 bg-white flex flex-col z-50 w-screen h-screen p-10 pt-16">
+      <div className="bg-white flex flex-col w-screen h-screen p-10 pt-16">
          <header className="flex justify-between items-center">
             <h2 className="uppercase font-bold text-slate-700 text-xl tracking-wider flex items-center">
                <div className="w-5 h-5 bg-indigo-500 rounded-full mr-1" />
