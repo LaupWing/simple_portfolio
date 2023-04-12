@@ -24,6 +24,19 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                   setShowCards(true)
                }}
             />
+            {showCards && <motion.h2 
+               className="col-span-full text-xl uppercase font-bold text-slate-300"
+               initial={{
+                  x: "-100%",
+                  opacity: 0
+               }}
+               animate={{
+                  x: 0,
+                  opacity: 1,
+               }}
+            >
+               Recent work
+            </motion.h2>}
             {(projects && showCards) && projects.map((project, i)=> (
                <motion.article
                   initial={{
