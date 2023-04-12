@@ -116,7 +116,7 @@ const ContactPage = () => {
          </motion.section>
 
          <motion.section 
-            className="col-span-1 p-6 border-2 border-slate-200 rounded-2xl bg-slate-100"
+            className="md:col-span-1 col-span-2 p-6 border-2 border-slate-200 rounded-2xl bg-slate-100"
             initial={{
                y: "100%"
             }}
