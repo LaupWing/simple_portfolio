@@ -35,7 +35,7 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                      x: 0
                   }}
                   key={project._id}
-                  className="col-span-2 md:col-span-1 mx-4 md:mx-0"
+                  className="col-span-2 md:col-span-1"
                >
                   <ProjectCard 
                      project={project}
@@ -69,7 +69,7 @@ const ShortIntro:FC = () => {
    ]
 
    return (
-      <section className="w-full grid grid-cols-1 p-4 md:p-0 md:grid-cols-3 gap-6 overflow-hidden">
+      <section className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 overflow-hidden">
          <motion.div 
             className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-1 md:col-span-2 overflow-hidden p-10"
             initial={{

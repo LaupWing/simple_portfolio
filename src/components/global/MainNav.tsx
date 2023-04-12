@@ -50,7 +50,7 @@ export const MainNav = () => {
    }
 
    return (
-      <header className="w-full text-sm mx-4 flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
+      <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
          <IconMenu 
             className="mr-4 text-slate-700 md:hidden"
             size={24} 

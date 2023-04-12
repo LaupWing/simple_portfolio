@@ -19,7 +19,7 @@ export const Layout:FC<PropsWithChildren> = ({
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-         <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto pb-10 fixed bg-white">
+         <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto px-8 pb-10 fixed bg-white">
             <MainNav />
             {initialNavLoaded && (
                <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
