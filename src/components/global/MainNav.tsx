@@ -51,12 +51,8 @@ export const MainNav = () => {
 
    return (
       <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
-         <IconMenu 
-            className="mr-4 text-slate-700 md:hidden"
-            size={24} 
-         />
-         <motion.div 
-            className="flex items-center space-x-1"
+         <motion.div
+            className="md:hidden"
             animate={{
                x: 0,
                opacity: 1,
@@ -66,6 +62,25 @@ export const MainNav = () => {
             }}
             initial={{
                x: -100,
+               opacity: 0
+            }}
+         >
+            <IconMenu 
+               className="mr-4 text-slate-700"
+               size={24} 
+            />
+         </motion.div>
+         <motion.div 
+            className="flex items-center space-x-1"
+            animate={{
+               x: 0,
+               opacity: 1,
+               transition: {
+                  delay: 0.3
+               }
+            }}
+            initial={{
+               x: 100,
                opacity: 0
             }}
          >
