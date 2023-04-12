@@ -111,11 +111,12 @@ const ShortIntro:FC = () => {
                      Contact me
                   </button>
                   <div className="space-x-4 flex">
-                     {socials.map((social) => (
+                     {socials.map((social, index) => (
                         <motion.div
                            whileHover={{
                               scale: 0.9,
                            }}
+                           key={index}
                         >
                            <Social
                               key={social}
