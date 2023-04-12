@@ -120,7 +120,7 @@ const ShortIntro:FC = () => {
             <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10" />
          </motion.div>
          <motion.img
-            className="col-span-1 object-cover aspect-[4/4] md:aspect-[4/6] rounded-2xl"
+            className="col-span-1 object-cover aspect-[4/4] object-top md:object-center md:aspect-[4/6] rounded-2xl"
             src="images/profile.jpg"
             alt="profile image"
             initial={{
