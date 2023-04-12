@@ -99,7 +99,6 @@ interface NavLinkProps {
    isLast: boolean
    query?: Partial<Record<SkillsType[number], boolean>>
 }
-
 const NavLink:FC<NavLinkProps> = ({
    href,
    text,
