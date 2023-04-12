@@ -1,3 +1,4 @@
+import type { FC } from "react"
 import { useState } from "react"
 import { SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
@@ -67,9 +68,9 @@ const ShortIntro:FC = () => {
    ]
 
    return (
-      <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
+      <section className="w-full grid grid-cols-1 p-4 md:p-0 md:grid-cols-3 gap-6 overflow-hidden">
          <motion.div 
-            className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-2 overflow-hidden p-10"
+            className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-1 md:col-span-2 overflow-hidden p-10"
             initial={{
                scale: 0
             }}
@@ -91,8 +92,8 @@ const ShortIntro:FC = () => {
                   and enjoy creating user-centric, delightful, and
                   human experiences.
                </p>
-               <div className="mt-auto flex space-x-10">
-                  <button className="px-9 rounded-full bg-neutral-900 text-white">
+               <div className="flex flex-col space-y-4 mt-4 md:mt-auto md:flex-row md:space-x-10">
+                  <button className="px-9 py-1 mr-auto rounded-full bg-neutral-900 text-white">
                      Contact me
                   </button>
                   <div className="space-x-4 flex">
