@@ -5,38 +5,18 @@ import { motion } from "framer-motion"
 import { useAppDispatch } from "~/app/hooks"
 import { setInitialMenuLoaded } from "~/slices/siteSettings"
 import { SkillsType } from "typings"
-import config from "~/config"
 import { IconMenu } from "../elements"
 import { MobileSideNav } from "./MobileSideNav"
  
-export const MainNav = () => {
-   const links = [
-      {
-         href: "/",
-         text: "Home"
-      },
-      {
-         href: "/projects",
-         text: "Projects",
-         query: (() => {
-            const q:Record<SkillsType[number], boolean> = {} as Record<SkillsType[number], boolean> 
-
-            config.skills.forEach(_skill => {
-               q[_skill] = true
-            })
-
-            return q
-         })()
-      },
-      {
-         href: "/about",
-         text: "About"
-      },
-      {
-         href: "/contact",
-         text: "Contact"
-      },
-   ]
+export const MainNav:FC<{
+   links: {
+      href: string
+      text: string
+      query?: any
+   }[]
+}> = ({
+   links
+}) => {
    const container = {
       hidden: { 
          opacity: 0

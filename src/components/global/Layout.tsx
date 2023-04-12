@@ -2,11 +2,40 @@ import Head from "next/head"
 import { FC, PropsWithChildren } from "react"
 import { MainNav } from "./MainNav"
 import { useAppSelector } from "~/app/hooks"
+import { SkillsType } from "typings"
+import config from "~/config"
 
 export const Layout:FC<PropsWithChildren> = ({
    children
 }) => {
    const { initialNavLoaded } = useAppSelector(state => state.siteSettings)
+   const links = [
+      {
+         href: "/",
+         text: "Home"
+      },
+      {
+         href: "/projects",
+         text: "Projects",
+         query: (() => {
+            const q:Record<SkillsType[number], boolean> = {} as Record<SkillsType[number], boolean> 
+
+            config.skills.forEach(_skill => {
+               q[_skill] = true
+            })
+
+            return q
+         })()
+      },
+      {
+         href: "/about",
+         text: "About"
+      },
+      {
+         href: "/contact",
+         text: "Contact"
+      },
+   ]
 
    return (
       <>
@@ -20,7 +49,7 @@ export const Layout:FC<PropsWithChildren> = ({
             <link rel="icon" href="/favicon.ico" />
          </Head>
          <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto px-8 pb-10 fixed bg-white">
-            <MainNav />
+            <MainNav links={links}/>
             {initialNavLoaded && (
                <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
                   { children }
