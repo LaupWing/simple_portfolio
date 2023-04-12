@@ -121,6 +121,19 @@ const NavLink:FC<NavLinkProps> = ({
             }}
             className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
          >
+            {isActive && (
+               <motion.span
+                  className="mr-1"
+                  initial={{
+                     width: 0
+                  }}
+                  animate={{
+                     width: "100%"
+                  }}
+               >
+                  👉
+               </motion.span>
+            )}
             {text}
          </Link>
       </motion.li>
