@@ -69,7 +69,7 @@ export const MobileSideNav:FC<{
 
          <nav className="my-10">
             <motion.ul 
-               className="flex flex-col gap-4"
+               className="flex flex-col gap-6"
                variants={container}
                animate="show"
                initial="hidden"
@@ -80,6 +80,7 @@ export const MobileSideNav:FC<{
                      href={link.href}
                      text={link.text}
                      query={link.query}
+                     onClose={onClose}
                   />
                ))}
             </motion.ul>
@@ -92,11 +93,13 @@ interface NavLinkProps {
    href: string
    text: string
    query?: Partial<Record<SkillsType[number], boolean>>
+   onClose: () => void
 }
 const NavLink:FC<NavLinkProps> = ({
    href,
    text,
-   query = {}
+   query = {},
+   onClose
 }) => {
    const router = useRouter()
    const isActive = href === "/" 
@@ -117,6 +120,7 @@ const NavLink:FC<NavLinkProps> = ({
                query
             }}
             className={`tracking-tight ${isActive ? "text-neutral-900 font-semibold" : "text-neutral-500"}`}
+            onClick={onClose}
          >
             {isActive && (
                <motion.span
