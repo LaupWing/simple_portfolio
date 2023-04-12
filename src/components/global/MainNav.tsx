@@ -49,7 +49,7 @@ export const MainNav = () => {
    }
 
    return (
-      <header className="w-full text-sm flex py-6 items-center justify-between mx-auto max-w-4xl">
+      <header className="w-full text-sm mx-4 flex py-6 items-center justify-between md:mx-auto max-w-4xl">
          <motion.div 
             className="flex items-center space-x-1"
             animate={{
@@ -65,11 +65,11 @@ export const MainNav = () => {
             }}
          >
             <div className="w-5 h-5 bg-indigo-500 rounded-full" />
-            <h1 className="uppercase font-bold">Logo</h1>
+            <h1 className="uppercase font-bold">Laup</h1>
          </motion.div>
          <nav className="text-neutral-800">
             <motion.ul
-               className="space-x-10 flex"
+               className="space-x-10 hidden md:flex"
                variants={container}
                animate="show"
                initial="hidden"
