@@ -72,9 +72,9 @@ export const MainNav = () => {
             <div className="w-5 h-5 bg-indigo-500 rounded-full" />
             <h1 className="uppercase font-bold">Laup</h1>
          </motion.div>
-         <nav className="text-neutral-800 hidden md:flex">
+         <nav className="text-neutral-800">
             <motion.ul
-               className="space-x-10"
+               className="space-x-10 hidden md:flex"
                variants={container}
                animate="show"
                initial="hidden"
