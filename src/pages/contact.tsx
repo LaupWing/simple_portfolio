@@ -45,7 +45,7 @@ const ContactPage = () => {
                className="grid grid-cols-2 gap-6 mt-8"
                onSubmit={handleSubmit(onSubmit)}
             >
-               <div className="flex flex-col">
+               <div className="flex flex-col col-span-2 md:col-span-1">
                   <label 
                      htmlFor="name"
                      className="text-sm mb-1 font-bold tracking-wider text-slate-400"
@@ -66,7 +66,7 @@ const ContactPage = () => {
                      </p>
                   )}
                </div>
-               <div className="flex flex-col">
+               <div className="flex flex-col col-span-2 md:col-span-1">
                   <label 
                      htmlFor="name"
                      className="text-sm mb-1 font-bold tracking-wider text-slate-400"
@@ -108,7 +108,7 @@ const ContactPage = () => {
                      </p>
                   )}
                </div>
-               <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider flex items-center justify-center">
+               <button className="mt-2 bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider flex items-center justify-center col-span-2 md:col-span-1">
                   Lets connect!
                   <IconSend className="ml-1" size={14} />
                </button>
