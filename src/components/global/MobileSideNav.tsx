@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { IconClose } from "../elements"
 import { SkillsType } from "typings"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export const MobileSideNav:FC<{
    links: {
@@ -15,23 +16,64 @@ export const MobileSideNav:FC<{
    links,
    onClose
 }) => {
+   const container = {
+      hidden: {
+      },
+      show: {
+         transition: {
+            staggerChildren: 0.1,
+            delayChildren: 1.2,
+         },
+      },
+   }
    return (
       <div className="bg-white flex flex-col w-screen h-screen p-10 pt-16">
          <header className="flex justify-between items-center">
-            <h2 className="uppercase font-bold text-slate-700 text-xl tracking-wider flex items-center">
+            <motion.h2 
+               className="uppercase font-bold text-slate-700 text-xl tracking-wider flex items-center"
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                     delay: 0.4
+                  }
+               }}
+               initial={{
+                  x: -100,
+                  opacity: 0
+               }}
+            >
                <div className="w-5 h-5 bg-indigo-500 rounded-full mr-1" />
                MENU
-            </h2>
-
-            <IconClose 
-               className="text-slate-500" 
-               size={22} 
-               onClick={onClose}
-            />
+            </motion.h2>
+            <motion.div
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                     delay: 0.8
+                  }
+               }}
+               initial={{
+                  x: 100,
+                  opacity: 0
+               }}
+            >
+               <IconClose 
+                  className="text-slate-500" 
+                  size={22} 
+                  onClick={onClose}
+               />
+            </motion.div>
          </header>
 
          <nav className="my-10">
-            <ul className="flex flex-col gap-4">
+            <motion.ul 
+               className="flex flex-col gap-4"
+               variants={container}
+               animate="show"
+               initial="hidden"
+            >
                {links.map((link, i) => (
                   <NavLink
                      key={i}
@@ -41,7 +83,7 @@ export const MobileSideNav:FC<{
                      query={link.query}
                   />
                ))}
-            </ul>
+            </motion.ul>
          </nav>
       </div>
    )
@@ -64,14 +106,14 @@ const NavLink:FC<NavLinkProps> = ({
       ? router.pathname === "/"
       : router.pathname.includes(href)
    const item = {
-      hidden: { scale: 0, y: 100 },
-      show: { scale: 1, y: 0 },
+      hidden: { opacity: 0, y: 100 },
+      show: { opacity: 1, y: 0 },
   }
 
    return (
-      // <motion.li
-      //    variants={item}
-      // >
+      <motion.li
+         variants={item}
+      >
          <Link
             href={{
                pathname: href,
@@ -81,6 +123,6 @@ const NavLink:FC<NavLinkProps> = ({
          >
             {text}
          </Link>
-      // </motion.li>
+      </motion.li>
    )
 }

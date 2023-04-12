@@ -33,11 +33,6 @@ export const MainNav:FC<{
 
    return (
       <>
-         {showSideNav && (
-            <div
-               className="z-[400] fixed inset-0 bg-white"
-            />
-         )}
          <AnimatePresence>
             {showSideNav && (
                <motion.div
