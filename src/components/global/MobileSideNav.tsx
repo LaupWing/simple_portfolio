@@ -10,8 +10,10 @@ export const MobileSideNav:FC<{
       text: string
       query?: Partial<Record<SkillsType[number], boolean>>
    }[]
+   onClose: () => void
 }> = ({
-   links
+   links,
+   onClose
 }) => {
    return (
       <div className="bg-white flex flex-col w-screen h-screen p-10 pt-16">
@@ -21,7 +23,11 @@ export const MobileSideNav:FC<{
                MENU
             </h2>
 
-            <IconClose className="text-slate-500" size={22} />
+            <IconClose 
+               className="text-slate-500" 
+               size={22} 
+               onClick={onClose}
+            />
          </header>
 
          <nav className="my-10">
