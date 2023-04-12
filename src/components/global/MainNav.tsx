@@ -12,7 +12,7 @@ export const MainNav:FC<{
    links: {
       href: string
       text: string
-      query?: any
+      query?: Partial<Record<SkillsType[number], boolean>>
    }[]
 }> = ({
    links
@@ -32,7 +32,9 @@ export const MainNav:FC<{
 
    return (
       <>
-         <MobileSideNav />
+         <MobileSideNav 
+            links={links}
+         />
          <header className="w-full text-sm flex py-6 items-center md:justify-between md:mx-auto max-w-4xl">
             <motion.div
                className="md:hidden"

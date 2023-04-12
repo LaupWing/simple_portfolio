@@ -5,9 +5,17 @@ import { SkillsType } from "typings"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
-export const MobileSideNav = () => {
+export const MobileSideNav:FC<{
+   links: {
+      href: string
+      text: string
+      query?: Partial<Record<SkillsType[number], boolean>>
+   }[]
+}> = ({
+   links
+}) => {
    return (
-      <div className="fixed inset-0 bg-white flex flex-col z-50 w-screen h-screen p-10">
+      <div className="fixed inset-0 bg-white flex flex-col z-50 w-screen h-screen p-10 pt-16">
          <header className="flex justify-between items-center">
             <h2 className="uppercase font-bold text-slate-700 text-xl tracking-wider flex items-center">
                <div className="w-5 h-5 bg-indigo-500 rounded-full mr-1" />
@@ -17,9 +25,17 @@ export const MobileSideNav = () => {
             <IconClose className="text-slate-500" size={22} />
          </header>
 
-         <nav>
-            <ul>
-
+         <nav className="my-10">
+            <ul className="flex flex-col gap-4">
+               {links.map((link, i) => (
+                  <NavLink
+                     key={i}
+                     href={link.href}
+                     text={link.text}
+                     isLast={i === (links.length - 1)}
+                     query={link.query}
+                  />
+               ))}
             </ul>
          </nav>
       </div>
@@ -48,9 +64,9 @@ const NavLink:FC<NavLinkProps> = ({
   }
 
    return (
-      <motion.li
-         variants={item}
-      >
+      // <motion.li
+      //    variants={item}
+      // >
          <Link
             href={{
                pathname: href,
@@ -60,6 +76,6 @@ const NavLink:FC<NavLinkProps> = ({
          >
             {text}
          </Link>
-      </motion.li>
+      // </motion.li>
    )
 }
