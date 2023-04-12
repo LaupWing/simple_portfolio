@@ -16,7 +16,7 @@ export const Slide1Skills = () => {
    return (
       <div className="flex-1 text-white flex flex-col justify-center items-center mb-6">
          <p className="mb-2 text-xs font-bold uppercase">I've used the technologies below, but not all projects are listed here.</p>
-         <div className="flex space-x-6">
+         <div className="flex space-x-6 space-y-4 items-end flex-wrap px-4 md:px-0 md:space-y-0">
             <IconFirebase size={34}/>
             <IconWordpress size={34}/>
             <IconReact size={34}/>

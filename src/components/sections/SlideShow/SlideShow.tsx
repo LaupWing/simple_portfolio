@@ -12,7 +12,7 @@ export const SlideShow:FC<SlideShowProps> = ({
 }) => {
    return (
       <motion.div 
-         className="col-span-2 h-40 relative overflow-hidden rounded-2xl flex"
+         className="col-span-2 mx-4 h-60 md:mx-0 md:h-40 relative overflow-hidden rounded-2xl flex"
          initial={{
             x: "-100%"
          }}
