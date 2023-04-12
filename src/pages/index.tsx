@@ -92,8 +92,8 @@ const ShortIntro:FC = () => {
                   and enjoy creating user-centric, delightful, and
                   human experiences.
                </p>
-               <div className="flex flex-col space-y-4 mt-4 md:space-y-0 md:mt-auto md:flex-row md:space-x-10">
-                  <button className="px-9 py-1 mr-auto rounded-full bg-neutral-900 text-white">
+               <div className="flex flex-col space-y-8 mt-8 md:space-y-0 md:mt-auto md:flex-row md:space-x-10">
+                  <button className="px-9 py-2 mr-auto rounded-full bg-neutral-900 text-white">
                      Contact me
                   </button>
                   <div className="space-x-4 flex">
@@ -120,7 +120,7 @@ const ShortIntro:FC = () => {
             <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10" />
          </motion.div>
          <motion.img
-            className="col-span-1 object-cover aspect-[4/6] rounded-2xl"
+            className="col-span-1 object-cover aspect-[4/4] md:aspect-[4/6] rounded-2xl"
             src="images/profile.jpg"
             alt="profile image"
             initial={{
