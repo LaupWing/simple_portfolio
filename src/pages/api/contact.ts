@@ -11,10 +11,6 @@ export default async function handler(
 ) {
    if (req.method === "POST") {
       const { name, email, message } = req.body
-      console.log({
-         user: process.env.EMAIL_USERNAME,
-         pass: process.env.EMAIL_PASSWORD,
-      })
       // Use Nodemailer to send an email with the form data
       const transporter = nodemailer.createTransport({
          host: "smtp.gmail.com",
