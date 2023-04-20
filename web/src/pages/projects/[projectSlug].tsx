@@ -34,7 +34,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
          >
             Back
          </motion.button>
-         <header className="w-full grid grid-cols-2 gap-6 ">
+         <header className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 ">
             <motion.div
                className="aspect-square border shadow rounded-2xl overflow-hidden flex"
                initial={{
