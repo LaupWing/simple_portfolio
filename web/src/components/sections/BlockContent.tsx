@@ -20,7 +20,7 @@ const ImageComponent:FC<any> = ({value, isInline}) => {
          }}
          alt={value.alt || ""} 
          loading="lazy"
-         className="max-w-md"
+         className="max-w-md w-full"
       />
    )
 }
