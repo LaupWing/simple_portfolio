@@ -1,9 +1,10 @@
 import Head from "next/head"
-import { FC, PropsWithChildren } from "react"
+import { FC, PropsWithChildren, useEffect, useRef } from "react"
 import { MainNav } from "./MainNav"
 import { useAppSelector } from "~/app/hooks"
 import { SkillsType } from "typings"
 import config from "~/config"
+import { useRouter } from "next/router"
 
 export const Layout:FC<PropsWithChildren> = ({
    children
@@ -36,6 +37,13 @@ export const Layout:FC<PropsWithChildren> = ({
          text: "Contact"
       },
    ]
+   const router = useRouter()
+   const container = useRef<HTMLDivElement>(null)
+   useEffect(() => {
+      router.events.on("routeChangeComplete", () => {
+         container.current?.scrollTo(0, 0)
+      })
+   }, [])
 
    return (
       <>
@@ -48,7 +56,10 @@ export const Layout:FC<PropsWithChildren> = ({
             />
             <link rel="icon" href="/favicon.ico" />
          </Head>
-         <div className="w-screen h-screen inset-0 flex flex-col overflow-y-auto px-8 pb-10 fixed bg-white">
+         <div 
+            className="w-screen h-screen inset-0 flex flex-col overflow-y-auto px-8 pb-10 fixed bg-white"
+            ref={container}
+         >
             <MainNav links={links}/>
             {initialNavLoaded && (
                <main className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
