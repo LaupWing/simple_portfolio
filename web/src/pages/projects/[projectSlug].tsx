@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
-import { FC, useState } from "react"
+import { FC, useRef, useState } from "react"
 import { Carousel } from "react-responsive-carousel"
 import { ProjectType } from "typings"
 import { IconExternal, IconGithub, Skill } from "~/components/elements"
@@ -44,18 +44,15 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   x: 0
                }}
             >
-               <Carousel 
-                  className="" 
+               <Carousel
                   showThumbs={false}
                   showStatus={false}
                   onChange={changedItem}
                >
                   {project.images.map(image => (
-                     <img 
-                        className="flex-1 h-full w-full object-cover" 
-                        src={urlFor(image).url()} 
-                        alt="" 
-                        key={image._key}
+                     <ProjectImage 
+                        image={image}
+                        key={image._id}
                      />
                   ))}
                </Carousel>
@@ -140,6 +137,43 @@ const ProjectInfo:FC<{
                </button>
             </div>
          </div>
+      </div>
+   )
+}
+
+const ProjectImage:FC<{
+   image: ProjectType["images"][number]
+}> = ({
+   image
+}) =>{
+   const el = useRef<HTMLDivElement>(null)
+   const [fullscreen, setFullScreen] = useState(false)
+
+   const toggleFullscreen = () => {
+      if(fullscreen){
+         document.exitFullscreen()
+         setFullScreen(false)
+      }else {
+         el.current?.requestFullscreen()
+         setFullScreen(true)
+      }
+   }
+   return (
+      <div 
+         className="flex items-center justify-center flex-1 relative"
+         ref={el}
+      >
+         <button 
+            className="absolute mx-auto top-2 px-4 py-1 font-bold text-xs rounded text-white uppercase bg-indigo-500/20"
+            onClick={toggleFullscreen}
+         >
+            {fullscreen ? "Minimize" : "Full screen"}
+         </button>
+         <img 
+            className="flex-1 h-full w-full object-cover" 
+            src={urlFor(image).url()} 
+            alt="image" 
+         />
       </div>
    )
 }
