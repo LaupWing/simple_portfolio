@@ -36,7 +36,12 @@ export const SlideShow:FC<SlideShowProps> = ({
             showStatus={false}
          >
             <Slide1Skills />
-            <div className="flex-1">Test</div>
+            <div className="flex-1 text-white flex flex-col justify-center items-center">
+               <h2>6 years of development experience.</h2>
+            </div>
+            <div className="flex-1 text-white flex flex-col justify-center items-center">
+               <h2>I spent 3 years creating a large, self-made project for a client.</h2>
+            </div>
             <div className="flex-1">Test</div>
             <div className="flex-1">Test</div>
          </Carousel>
