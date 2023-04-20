@@ -52,7 +52,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                   {project.images.map(image => (
                      <ProjectImage 
                         image={image}
-                        key={image._id}
+                        key={image._key}
                      />
                   ))}
                </Carousel>
@@ -129,12 +129,16 @@ const ProjectInfo:FC<{
             </div>
             <p className="text-sm text-slate-900">{project.description}</p>
             <div className="flex gap-x-4 mt-auto">
-               <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
-                  <IconGithub size={24} />
-               </button>
-               <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
-                  <IconExternal size={24} />
-               </button>
+               <a href={project.github} target="_blank">
+                  <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
+                     <IconGithub size={24} />
+                  </button>
+               </a>
+               <a href={project.url} target="_blank">
+                  <button className="w-20 flex justify-center items-center bg-indigo-500 rounded py-0.5 text-indigo-900 border-indigo-600 border-2 shadow">
+                     <IconExternal size={24} />
+                  </button>
+               </a>
             </div>
          </div>
       </div>
@@ -148,7 +152,7 @@ const ProjectImage:FC<{
 }) =>{
    const el = useRef<HTMLDivElement>(null)
    const [fullscreen, setFullScreen] = useState(false)
-
+   
    const toggleFullscreen = () => {
       if(fullscreen){
          document.exitFullscreen()
