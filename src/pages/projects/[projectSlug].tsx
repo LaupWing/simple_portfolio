@@ -36,7 +36,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
          </motion.button>
          <header className="w-full grid grid-cols-2 gap-6 ">
             <motion.div
-               className="aspect-square rounded-2xl overflow-hidden flex"
+               className="aspect-square border shadow rounded-2xl overflow-hidden flex"
                initial={{
                   x: "-100%"
                }}
@@ -61,6 +61,7 @@ const ProjectDetail:NextPage<{project: ProjectType}> = ({ project }) => {
                </Carousel>
             </motion.div>
             <motion.div
+               className="border shadow rounded-2xl"
                initial={{
                   opacity: 0
                }}
