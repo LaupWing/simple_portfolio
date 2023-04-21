@@ -65,7 +65,7 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
 export default HomePage
 
 export const getServerSideProps:GetServerSideProps = async () => {
-   const projectsQuery = "*[_type == 'projects']"
+   const projectsQuery = "*[_type == 'projects'][0..3] | order(_createdAt asc)"
    const projects = await client.fetch(projectsQuery)
    
    return {
