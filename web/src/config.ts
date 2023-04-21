@@ -16,9 +16,9 @@ export default {
       "wordpress"
    ] as SkillsType,
    socials: {
-      dribble: "",
-      instagram: "",
-      github: "",
-      linkedin: ""
+      dribble: "https://dribbble.com/LaupWing0",
+      instagram: "https://www.instagram.com/laupwing/",
+      github: "https://github.com/LaupWing",
+      linkedin: "https://www.linkedin.com/in/loc-nguyen-a33896272/"
    } as Record<SocialType, string>
 }

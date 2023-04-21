@@ -7,6 +7,8 @@ import { client } from "~/sanity"
 import { ProjectType, SocialType } from "typings"
 import { motion } from "framer-motion"
 import { Social } from "~/components/elements"
+import config from "~/config"
+import Link from "next/link"
 
 interface HomePageProps {
    projects: ProjectType[]
@@ -107,9 +109,11 @@ const ShortIntro:FC = () => {
                   human experiences with code.
                </p>
                <div className="flex flex-col space-y-8 mt-8 md:space-y-0 md:mt-auto md:flex-row md:space-x-10">
-                  <button className="px-9 py-2 mr-auto rounded-full bg-neutral-900 text-white">
-                     Contact me
-                  </button>
+                  <Link href={"/contact"} className="flex">
+                     <button className="px-9 py-2 mr-auto rounded-full bg-neutral-900 text-white">
+                        Contact me
+                     </button>
+                  </Link>
                   <div className="space-x-4 flex">
                      {socials.map((social, index) => (
                         <motion.div
@@ -118,10 +122,12 @@ const ShortIntro:FC = () => {
                            }}
                            key={index}
                         >
-                           <Social
-                              key={social}
-                              name={social}
-                           />
+                           <a href={config.socials[social]} target="_blank">
+                              <Social
+                                 key={social}
+                                 name={social}
+                              />
+                           </a>
                         </motion.div>
                      ))}
                   </div>
