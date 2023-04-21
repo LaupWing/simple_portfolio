@@ -88,6 +88,7 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                </Link>
             </motion.div>}
          </section>
+         <ContactSection projectsLength={projects.length} />
       </>
    )
 }
@@ -102,6 +103,74 @@ export const getServerSideProps:GetServerSideProps = async () => {
          projects
       }
    }
+}
+
+const ContactSection:FC<{
+   projectsLength: number
+}> = ({
+   projectsLength
+}) => {
+   const socials: SocialType[] = [
+      "linkedin",
+      "github",
+      "dribble",
+      "instagram",
+   ]
+   return (
+      <motion.div 
+         className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-full overflow-hidden p-10"
+         initial={{
+            y: "100%",
+            opacity: 0
+         }}
+         animate={{
+            y: 0,
+            opacity: 1,
+            transition: {
+               delay: (projectsLength * 0.25) + 0.5
+            }
+         }}
+      >
+         <div className="flex flex-col flex-1">
+            <h1 className="text-3xl leading-normal">
+               Let's connect!
+            </h1>
+            <p className="my-4 mb-14">
+               Feel free to contact me <a href="mailto:laupwin@gmail.com">laupwing@gmail.com</a>
+            </p>
+            <div className="flex flex-col space-y-8 mt-8 md:space-y-0 md:mt-auto md:flex-row md:space-x-10">
+               <Link href={"/contact"} className="flex">
+                  <button className="px-9 py-2 mr-auto rounded-full bg-neutral-900 text-white">
+                     Contact me
+                  </button>
+               </Link>
+               <div className="space-x-4 flex">
+                  {socials.map((social, index) => (
+                     <motion.div
+                        whileHover={{
+                           scale: 0.9,
+                        }}
+                        key={index}
+                     >
+                        <a href={config.socials[social]} target="_blank">
+                           <Social
+                              key={social}
+                              name={social}
+                           />
+                        </a>
+                     </motion.div>
+                  ))}
+               </div>
+            </div>
+         </div>
+         <img
+            className="absolute inset-0 object-cover -z-10"
+            src="images/profile.jpg"
+            alt="profile image"
+         />
+         <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl -z-10" />
+      </motion.div>
+   )
 }
 
 const ShortIntro:FC = () => {
