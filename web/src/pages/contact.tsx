@@ -14,6 +14,7 @@ import axios from "axios"
 interface FormData {
    email: string
    name: string
+   subject: string
    message: string
 }
 
@@ -84,6 +85,27 @@ const ContactPage = () => {
                   {errors.email && (
                      <p className="text-red-400 uppercase text-xs font-bold mt-1">
                         { errors.email.message }
+                     </p>
+                  )}
+               </div>
+               <div className="flex flex-col col-span-2">
+                  <label 
+                     htmlFor="subject"
+                     className="text-sm mb-1 font-bold tracking-wider text-slate-400"
+                  >
+                     Subject
+                  </label>
+                  <input 
+                     id="subject"
+                     className="p-1 focus:border-indigo-500 rounded border-slate-300" 
+                     type="text" 
+                     {...register("subject", {
+                        required: "You need to fill in a subject!"
+                     })}
+                  />
+                  {errors.subject && (
+                     <p className="text-red-400 uppercase text-xs font-bold mt-1">
+                        { errors.subject.message }
                      </p>
                   )}
                </div>
