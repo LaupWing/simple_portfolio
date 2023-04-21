@@ -1,4 +1,4 @@
-import { SkillsType } from "typings";
+import { SkillsType, SocialType } from "typings";
 
 export default {
    github_endpoint: "https://api.github.com/users/",
@@ -14,5 +14,11 @@ export default {
       "typescript",
       "vue",
       "wordpress"
-   ] as SkillsType
+   ] as SkillsType,
+   socials: {
+      dribble: "",
+      instagram: "",
+      github: "",
+      linkedin: ""
+   } as Record<SocialType, string>
 }
