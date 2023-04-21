@@ -10,6 +10,7 @@ import {
    IconTwitter 
 } from "~/components/elements"
 import axios from "axios"
+import { toast } from "react-hot-toast"
 
 interface FormData {
    email: string
@@ -19,11 +20,12 @@ interface FormData {
 }
 
 const ContactPage = () => {
-   const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
+   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>()
    const onSubmit: SubmitHandler<FormData> = async data => {
       try {
          const response = await axios.post('/api/sendgrid', data);
-         console.log(response.data)
+         reset()
+         toast.success("Thank you for submitting! I will contact you as soon as possible!")
        } catch (error) {
          console.error(error)
        }
