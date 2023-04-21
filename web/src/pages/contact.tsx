@@ -21,7 +21,7 @@ const ContactPage = () => {
    const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
    const onSubmit: SubmitHandler<FormData> = async data => {
       try {
-         const response = await axios.post('/api/contact', data);
+         const response = await axios.post('/api/sendgrid', data);
          console.log(response.data)
        } catch (error) {
          console.error(error)

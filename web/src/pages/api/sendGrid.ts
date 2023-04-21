@@ -12,15 +12,21 @@ export default async function handler(
    res: NextApiResponse<ResponseData>
 ) {
    try{
-      await sendgrid.send({
+      console.log(req.body)
+      sendgrid.send({
          to: "laupwing@gmail.com",
          from: "laupwing@hotmail.com",
-         subject: req.body.subject,
+         subject: "req.body.subject",
          html: "<div>You've got a mail</div>"
       })
+         .then(() => {
+            console.log('Email sent')
+         })
+         .catch((error) => {
+            console.error(error.response.body)
+         })
+      return res.status(200).json({ message: ""})
    }catch(err) {
       return res.status(500)
    }
-
-   return res.status(200).json({ message: ""})
 }
