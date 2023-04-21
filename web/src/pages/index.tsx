@@ -4,7 +4,7 @@ import { SlideShow } from "~/components/sections"
 import { ProjectCard } from "~/components/cards"
 import { GetServerSideProps, NextPage } from "next"
 import { client } from "~/sanity"
-import { ProjectType, SocialType } from "typings"
+import { ProjectType, SkillsType, SocialType } from "typings"
 import { motion } from "framer-motion"
 import { Social } from "~/components/elements"
 import config from "~/config"
@@ -58,6 +58,35 @@ const HomePage:NextPage<HomePageProps> = ({ projects }) => {
                   />
                </motion.article>
             ))}
+            {showCards && <motion.div
+               className="col-span-full"
+               initial={{
+                  x: "-100%",
+                  opacity: 0
+               }}
+               animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                     delay: projects.length * 0.2
+                  }
+               }}
+            >
+               <Link href={{
+                  pathname: "/projects",
+                  query: (() => {
+                     const q:Record<SkillsType[number], boolean> = {} as Record<SkillsType[number], boolean> 
+         
+                     config.skills.forEach(_skill => {
+                        q[_skill] = true
+                     })
+         
+                     return q
+                  })()
+               }}>
+                  <button className="bg-indigo-500 text-white uppercase font-bold text-xs px-4 py-2 rounded shadow tracking-wider flex items-center justify-center">See more</button>
+               </Link>
+            </motion.div>}
          </section>
       </>
    )
