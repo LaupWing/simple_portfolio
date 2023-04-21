@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { AnimatePresence, motion } from "framer-motion"
 import { GetServerSideProps, NextPage } from "next"
 import { useRouter } from "next/router"
@@ -174,7 +175,10 @@ const ProjectImage:FC<{
             {fullscreen ? "Minimize" : "Full screen"}
          </button>
          <img 
-            className="flex-1 h-full w-full object-cover" 
+            className={clsx( fullscreen 
+               ? "w-full h-auto" 
+               : "flex-1 h-full w-full object-cover"
+            )} 
             src={urlFor(image).url()} 
             alt="image" 
          />
