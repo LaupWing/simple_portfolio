@@ -11,6 +11,11 @@ export default defineType({
          name: "name",
          title: "Name",
          type: "string"
+      }),
+      defineField({
+         name: "finished",
+         title: "Is this finished?",
+         type: "boolean"
       })
    ]
 })
