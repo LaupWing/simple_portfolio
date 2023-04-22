@@ -16,6 +16,14 @@ export default defineType({
          name: "finished",
          title: "Is this finished?",
          type: "boolean"
-      })
+      }),
+      defineField({
+         name: "project",
+         title: "Is this todo part of a project?",
+         type: "reference",
+         to: [{
+            type: "projects"
+         }]
+      }),
    ]
 })
