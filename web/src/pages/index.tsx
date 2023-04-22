@@ -186,7 +186,7 @@ const ShortIntro:FC = () => {
          <motion.div 
             className="relative flex-shrink-0 flex-1 flex rounded-2xl col-span-1 md:col-span-2 overflow-hidden p-10"
             initial={{
-               scale: 0.7,
+               x: "-100%",
                opacity: 0
             }}
             animate={{
@@ -194,8 +194,7 @@ const ShortIntro:FC = () => {
                opacity: 1,
                transition: {
                   delay: .2
-               },
-               scale: 1
+               }
             }}
          >
             <div className="flex flex-col flex-1">
