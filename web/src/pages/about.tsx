@@ -43,13 +43,13 @@ const AboutPage = () => {
             >
                <div className="flex flex-col flex-1">
                   <h1 className="text-3xl leading-normal">
-                     Hello, I’m Loc, a product Designer With 7 years of
+                     Hello, I’m Loc, a fullstack Developer With 6 years of
                      experience.
                   </h1>
                   <p className="mt-10 flex-1">
                      I care a lot about using design for positive impact.
                      and enjoy creating user-centric, delightful, and
-                     human experiences.
+                     human experiences with code.
                   </p>
                </div>
                <div className="absolute inset-0 h-full bg-white/40 backdrop-blur-3xl -z-[5]" />
