@@ -1,16 +1,12 @@
-import { SkillsType, SocialType } from "typings"
-import { Skill, SkillLevel, Social } from "~/components/elements"
-import config from "~/config"
+import { SocialType } from "typings"
 import { motion } from "framer-motion"
+import { GetServerSideProps } from "next"
+import { client } from "~/sanity"
 
-const TodosPage = () => {
-   const socials: SocialType[] = [
-      "linkedin",
-      "github",
-      "dribble",
-      "instagram",
-   ]
-
+const TodosPage = ({
+   todos
+}) => {
+   console.log(todos)
    return (
       <>
          <section className="w-full grid grid-cols-1 gap-6 overflow-hidden">
@@ -19,3 +15,14 @@ const TodosPage = () => {
    )
 }
 export default TodosPage
+
+export const getServerSideProps:GetServerSideProps = async () => {
+   const todosQuery = "*[_type == 'todos']"
+   const todos = await client.fetch(todosQuery)
+   
+   return {
+      props: {
+         todos
+      }
+   }
+}
