@@ -13,7 +13,7 @@ const TodosPage = () => {
 
    return (
       <>
-         <section className="w-full grid grid-cols-3 gap-6 overflow-hidden">
+         <section className="w-full grid grid-cols-1 gap-6 overflow-hidden">
          </section>
       </>
    )
