@@ -1,4 +1,4 @@
-import { SkillsType, SocialType } from "typings";
+import { SkillsType, SocialType } from "types";
 
 export default {
    github_endpoint: "https://api.github.com/users/",

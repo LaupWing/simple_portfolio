@@ -13,7 +13,7 @@ import {
    IconWordpress 
 } from "~/components/elements"
 import { IconBaseProps, IconType } from "react-icons"
-import { SkillsType } from "typings"
+import { SkillsType } from "types"
 
 interface SkillProps extends IconBaseProps {
    skill: SkillsType[number]

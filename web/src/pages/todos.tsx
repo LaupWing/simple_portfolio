@@ -1,4 +1,4 @@
-import { SocialType } from "typings"
+import { SocialType } from "types"
 import { motion } from "framer-motion"
 import { GetServerSideProps } from "next"
 import { client } from "~/sanity"

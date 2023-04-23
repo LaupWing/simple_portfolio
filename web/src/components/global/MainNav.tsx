@@ -4,7 +4,7 @@ import { FC, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useAppDispatch } from "~/app/hooks"
 import { setInitialMenuLoaded } from "~/slices/siteSettings"
-import { SkillsType } from "typings"
+import { SkillsType } from "types"
 import { IconMenu } from "../elements"
 import { MobileSideNav } from "./MobileSideNav"
  

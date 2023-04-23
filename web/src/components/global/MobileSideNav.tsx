@@ -1,7 +1,7 @@
 import { FC } from "react"
 import { useRouter } from "next/router"
 import { IconClose } from "../elements"
-import { SkillsType } from "typings"
+import { SkillsType } from "types"
 import Link from "next/link"
 import { motion } from "framer-motion"
 

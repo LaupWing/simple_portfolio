@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { SocialType } from "typings"
+import { SocialType } from "types"
 import { IconDribbble, IconGithub, IconInstagram, IconLinkedIn } from "./Icons"
 import { IconType } from "react-icons"
 

@@ -2,7 +2,7 @@ import Head from "next/head"
 import { FC, PropsWithChildren, useEffect, useRef } from "react"
 import { MainNav } from "./MainNav"
 import { useAppSelector } from "~/app/hooks"
-import { SkillsType } from "typings"
+import { SkillsType } from "types"
 import config from "~/config"
 import { useRouter } from "next/router"
 

@@ -1,4 +1,4 @@
-import { ProjectType, SkillsPartial, SkillsType } from "typings"
+import { ProjectType, SkillsPartial, SkillsType } from "types"
 import { Skill } from "~/components/elements"
 import config from "~/config"
 import { FC, useEffect, useState } from "react"

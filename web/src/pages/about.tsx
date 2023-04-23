@@ -1,4 +1,4 @@
-import { SkillsType, SocialType } from "typings"
+import { SkillsType, SocialType } from "types"
 import { Skill, SkillLevel, Social } from "~/components/elements"
 import config from "~/config"
 import { motion } from "framer-motion"

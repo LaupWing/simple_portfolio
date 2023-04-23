@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
-import { ProjectType } from "typings"
+import { ProjectType } from "types"
 import { IconArrow, Skill } from "~/components/elements"
 import { urlFor } from "~/sanity"
 
