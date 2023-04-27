@@ -17,7 +17,7 @@ export default {
    ] as SkillsType,
    socials: {
       dribble: "https://dribbble.com/LaupWing0",
-      instagram: "https://www.instagram.com/laupwing/",
+      instagram: "",
       github: "https://github.com/LaupWing",
       linkedin: "https://www.linkedin.com/in/loc-nguyen-a33896272/"
    } as Record<SocialType, string>
